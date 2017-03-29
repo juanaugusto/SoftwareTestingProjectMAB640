@@ -5,6 +5,7 @@ import org.junit.rules.ExpectedException;
 
 import br.ufrj.testproj.exceptions.NegativeSideException;
 import br.ufrj.testproj.exceptions.TooBigSideException;
+import br.ufrj.testproj.exceptions.WrongNumberOfArgumentsException;
 import br.ufrj.testproj.exceptions.ZeroSideException;
 import br.ufrj.testproj.principal.ClassifyTriangles;
 import junit.framework.Test;
@@ -35,39 +36,7 @@ public class TriangleTest extends TestCase {
 	public static Test suite() {
 		return new TestSuite(TriangleTest.class);
 	}
-
-	public void testIsosceles12() throws Exception {
-		this.x = 3;
-		this.y = 3;
-		this.z = 4;
-
-		assertEquals(ClassifyTriangles.typeTriangle(x, y, z), "isosceles");
-	}
-
-	public void testIsosceles23() throws Exception {
-		this.x = 4;
-		this.y = 3;
-		this.z = 3;
-
-		assertEquals(ClassifyTriangles.typeTriangle(x, y, z), "isosceles");
-	}
-
-	public void testIsosceles13() throws Exception {
-		this.x = 3;
-		this.y = 4;
-		this.z = 3;
-
-		assertEquals(ClassifyTriangles.typeTriangle(x, y, z), "isosceles");
-	}
-
-	public void testEquilatero() throws Exception {
-		this.x = 3;
-		this.y = 3;
-		this.z = 3;
-
-		assertEquals(ClassifyTriangles.typeTriangle(x, y, z), "equilatero");
-	}
-
+	
 	public void testEscaleno1() throws Exception {
 		this.x = 2;
 		this.y = 3;
@@ -115,8 +84,40 @@ public class TriangleTest extends TestCase {
 
 		assertEquals(ClassifyTriangles.typeTriangle(x, y, z), "escaleno");
 	}
+	
+	public void testEquilatero() throws Exception {
+		this.x = 3;
+		this.y = 3;
+		this.z = 3;
 
-	public void testAceitaZero1() {
+		assertEquals(ClassifyTriangles.typeTriangle(x, y, z), "equilatero");
+	}
+
+	public void testIsosceles12() throws Exception {
+		this.x = 3;
+		this.y = 3;
+		this.z = 4;
+
+		assertEquals(ClassifyTriangles.typeTriangle(x, y, z), "isosceles");
+	}
+
+	public void testIsosceles23() throws Exception {
+		this.x = 4;
+		this.y = 3;
+		this.z = 3;
+
+		assertEquals(ClassifyTriangles.typeTriangle(x, y, z), "isosceles");
+	}
+
+	public void testIsosceles13() throws Exception {
+		this.x = 3;
+		this.y = 4;
+		this.z = 3;
+
+		assertEquals(ClassifyTriangles.typeTriangle(x, y, z), "isosceles");
+	}
+
+	public void testAcceptsZeroNumbers1() {
 		this.x = 0;
 		this.y = 3;
 		this.z = 4;
@@ -124,12 +125,12 @@ public class TriangleTest extends TestCase {
 		this.exception.expect(ZeroSideException.class);
 		try {
 			ClassifyTriangles.typeTriangle(x, y, z);
-		} catch (TooBigSideException | ZeroSideException | NegativeSideException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 		}
 	}
 
-	public void testAceitaZero2() {
+	public void testAcceptsZeroNumbers2() {
 		this.x = 3;
 		this.y = 0;
 		this.z = 4;
@@ -137,12 +138,12 @@ public class TriangleTest extends TestCase {
 		this.exception.expect(ZeroSideException.class);
 		try {
 			ClassifyTriangles.typeTriangle(x, y, z);
-		} catch (TooBigSideException | ZeroSideException | NegativeSideException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 		}
 	}
 
-	public void testAceitaZero3() {
+	public void testAcceptsZeroNumbers3() {
 		this.x = 3;
 		this.y = 4;
 		this.z = 0;
@@ -150,12 +151,12 @@ public class TriangleTest extends TestCase {
 		this.exception.expect(ZeroSideException.class);
 		try {
 			ClassifyTriangles.typeTriangle(x, y, z);
-		} catch (TooBigSideException | ZeroSideException | NegativeSideException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 		}
 	}
 
-	public void testAceitaNegativo1() {
+	public void testAcceptsNegativeNumbers1() {
 		this.x = -2;
 		this.y = 3;
 		this.z = 4;
@@ -163,12 +164,12 @@ public class TriangleTest extends TestCase {
 		this.exception.expect(NegativeSideException.class);
 		try {
 			ClassifyTriangles.typeTriangle(x, y, z);
-		} catch (TooBigSideException | ZeroSideException | NegativeSideException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 		}
 	}
 
-	public void testAceitaNegativo2() {
+	public void testAcceptsNegativeNumbers2() {
 		this.x = 3;
 		this.y = -2;
 		this.z = 4;
@@ -176,12 +177,12 @@ public class TriangleTest extends TestCase {
 		this.exception.expect(NegativeSideException.class);
 		try {
 			ClassifyTriangles.typeTriangle(x, y, z);
-		} catch (TooBigSideException | ZeroSideException | NegativeSideException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 		}
 	}
 
-	public void testAceitaNegativo3() {
+	public void testAcceptsNegativeNumbers3() {
 		this.x = 3;
 		this.y = 4;
 		this.z = -2;
@@ -189,12 +190,12 @@ public class TriangleTest extends TestCase {
 		this.exception.expect(NegativeSideException.class);
 		try {
 			ClassifyTriangles.typeTriangle(x, y, z);
-		} catch (TooBigSideException | ZeroSideException | NegativeSideException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 		}
 	}
-
-	public void testLadoMuitoGrande1() {
+	
+	public void testVeryLargeSide1() {
 		this.x = 7;
 		this.y = 3;
 		this.z = 4;
@@ -202,12 +203,12 @@ public class TriangleTest extends TestCase {
 		this.exception.expect(TooBigSideException.class);
 		try {
 			ClassifyTriangles.typeTriangle(x, y, z);
-		} catch (TooBigSideException | ZeroSideException | NegativeSideException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 		}
 	}
 
-	public void testLadoMuitoGrande2() {
+	public void testVeryLargeSide2() {
 		this.x = 3;
 		this.y = 7;
 		this.z = 4;
@@ -215,12 +216,12 @@ public class TriangleTest extends TestCase {
 		this.exception.expect(TooBigSideException.class);
 		try {
 			ClassifyTriangles.typeTriangle(x, y, z);
-		} catch (TooBigSideException | ZeroSideException | NegativeSideException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 		}
 	}
 
-	public void testLadoMuitoGrande3() {
+	public void testVeryLargeSide3() {
 		this.x = 3;
 		this.y = 4;
 		this.z = 7;
@@ -228,12 +229,12 @@ public class TriangleTest extends TestCase {
 		this.exception.expect(TooBigSideException.class);
 		try {
 			ClassifyTriangles.typeTriangle(x, y, z);
-		} catch (TooBigSideException | ZeroSideException | NegativeSideException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 		}
 	}
 
-	public void testLadoMuitoGrande4() {
+	public void testVeryLargeSide4() {
 		this.x = 8;
 		this.y = 3;
 		this.z = 4;
@@ -241,12 +242,12 @@ public class TriangleTest extends TestCase {
 		this.exception.expect(TooBigSideException.class);
 		try {
 			ClassifyTriangles.typeTriangle(x, y, z);
-		} catch (TooBigSideException | ZeroSideException | NegativeSideException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 		}
 	}
 
-	public void testLadoMuitoGrande5() {
+	public void testVeryLargeSide5() {
 		this.x = 3;
 		this.y = 8;
 		this.z = 4;
@@ -254,12 +255,12 @@ public class TriangleTest extends TestCase {
 		this.exception.expect(TooBigSideException.class);
 		try {
 			ClassifyTriangles.typeTriangle(x, y, z);
-		} catch (TooBigSideException | ZeroSideException | NegativeSideException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 		}
 	}
 
-	public void testLadoMuitoGrande6() {
+	public void testVeryLargeSide6() {
 		this.x = 3;
 		this.y = 4;
 		this.z = 8;
@@ -267,12 +268,25 @@ public class TriangleTest extends TestCase {
 		this.exception.expect(TooBigSideException.class);
 		try {
 			ClassifyTriangles.typeTriangle(x, y, z);
-		} catch (TooBigSideException | ZeroSideException | NegativeSideException e) {
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+		}
+	}
+	
+	public void testAcceptsAllZero() {
+		this.x = 0;
+		this.y = 0;
+		this.z = 0;
+
+		this.exception.expect(ZeroSideException.class);
+		try {
+			ClassifyTriangles.typeTriangle(x, y, z);
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 		}
 	}
 
-	public void testNotInteger() throws Exception {
+	public void testAcceptsDoubleValues() throws Exception {
 		this.x = 4.57;
 		this.y = 3.65;
 		this.z = 2.9;
@@ -280,5 +294,27 @@ public class TriangleTest extends TestCase {
 		this.type = ClassifyTriangles.typeTriangle(x, y, z);
 		assertEquals(this.type, "escaleno");
 	}
+	
+	public void testAcceptsLargerNumberOfArguments(){
+		this.x = 2;
+		this.y = 3;
+		this.z = 4;
+		this.w = 8;
+		
+//		this.exception.expect(WrongNumberOfArgumentsException.class);
+		this.exception.expect(ZeroSideException.class);
+
+		try {
+			this.type = ClassifyTriangles.typeTriangle(x, y, z, w);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+		} 
+		
+		
+	}
+	
+	
+	
+	
 
 }
