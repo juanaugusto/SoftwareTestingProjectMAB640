@@ -16,4 +16,4 @@ Para este trabalho, foram criado os seguintes arquivos:
 * Juan Augusto
 * Amanda Braga
 
-**Versão do Java do Projeto:** 1.8
+**Versão Java do Projeto:** 1.8
