@@ -1,28 +1,18 @@
-# proj_teste
-Conteúdo pratico da disciplina de Projeto de Testes de Software.
+#Trabalhos de Projeto de Testes de Software
 
-Para facilitar (espero que realmente facilite) nossas vidas, foi criado um projeto no Eclipse para desenvolvermos este trabalho.
+Este projeto foi adaptado para seguir o padrão de organização da ferramenta Apache Maven, motivo pelo qual a estrutura encontra-se um pouco complexa para a quantidade de código. Isso pode ser explicável, entretanto, por decidirmos nos utilizar deste mesmo repositório para todos os trabalhos.
 
-O projeto tem dois arquivos principais:
+##Trabalho 1 (29/03/2017)
+####Criação e implementação dos testes para a funçåo de retornar o tipo de triângulo
 
-* **ClassifyTriangles.java** que conterá os métodos de verificar que o triângulo existe e classificá-lo.
-* **TriangleTest.java** que tem a classe que criamos ainda em aula com nossos testes unitários 
-(pra criar esse arquivo, escolhi a opção jUnit Test Case em vez de Class).
+Para este trabalho, foram criado os seguintes arquivos:
+*[ClassifyTriangles.java](https://github.com/mborgescc/proj_teste/blob/master/src/main/java/br/ufrj/testproj/principal/ClassifyTriangles.java) - Método de classificaçao do triångulo
+*[Exceptions](https://github.com/mborgescc/proj_teste/tree/master/src/main/java/br/ufrj/testproj/exceptions) - Exceções geradas para os casos inválidos de entrada
+*[TriangleTest.java](https://github.com/mborgescc/proj_teste/blob/master/src/test/java/br/ufrj/testproj/testcases/TriangleTest.java) - Implementação dos casos de teste para o método em ClassifyTriangles.java
 
-**Biblioteca do JUnit**
-Para adicionar as bibliotecas do jUnit foi feito o seguinte:
-
-1. Fui nas propriedades do projeto (clique com botão direito em cima do projeto > properties)
-1. Fui na opção Java Build Path
-1. Cliquei em Add Library
-1. Na janela, cliquei em jUnit
-1. Cliquei em next
-1. Mantive a opção de jUnit 4 que o Eclipse sugeriu (por nenhum motivo específico rs)
-1. Cliquei em Finish
-1. Cliquei em OK
+**Alunos:**
+*Maurício Borges
+*Juan Augusto
+*Amanda Braga
 
 **Versão do Java do Projeto:** 1.8
-
-### IMPORTANTE:
-Por que nosso projeto ainda não funciona?
-Não temos todos os métodos implementados, como o que verifica se o triângulo é válido. Não temos aquelas exceções que esperamos receber nos últimos testes unitários.
