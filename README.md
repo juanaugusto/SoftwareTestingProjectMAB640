@@ -1,7 +1,4 @@
 # Trabalhos de Projeto de Testes de Software
-
-Este projeto foi adaptado para seguir o padrão de organização da ferramenta Apache Maven, motivo pelo qual a estrutura encontra-se um pouco complexa para a quantidade de código. Isso pode ser explicável, entretanto, por decidirmos nos utilizar deste mesmo repositório para todos os trabalhos.
-
 ## Trabalho 1 (29/03/2017) - Criação e implementação dos testes para a função que retorna o tipo de triângulo
 
 Para este trabalho, foram criado os seguintes arquivos:
