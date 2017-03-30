@@ -11,7 +11,6 @@ Para este trabalho, foram criado os seguintes arquivos:
 * [TriangleTest.java](https://github.com/mborgescc/proj_teste/blob/master/src/test/java/br/ufrj/testproj/testcases/TriangleTest.java) - Implementação dos casos de teste para o método em ClassifyTriangles.java
 
 **Alunos:**
-
 * Maurício Borges
 * Juan Augusto
 * Amanda Braga
