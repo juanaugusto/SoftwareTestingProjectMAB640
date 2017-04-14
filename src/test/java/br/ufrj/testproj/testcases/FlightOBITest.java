@@ -2,109 +2,127 @@ package br.ufrj.testproj.testcases;
 
 import br.ufrj.testproj.principal.CalculatePlaneFlight;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertArrayEquals;
 import org.junit.Test;
 
 public class FlightOBITest {
 
-	private String pA = "00:00", pB = "00:00", cA, cB;
+	private String pA, pB, cA, cB;
 
 	// Test for duration = 0h01 and DeltaFuse = -11
 	@Test
 	public void testD0FNegative11() {
-		this.cB = "13:01";
+		this.pA = "11:00";
+		this.cB = "00:01";
+		this.pB = "00:00";
 		this.cA = "11:01";
 		int[] durationAndFuse = { 1, -11 };
 
-		assertEquals(CalculatePlaneFlight.calculateDurationAndFuseDifference(
+		assertArrayEquals(CalculatePlaneFlight.calculateWrongDurationAndFuseDifference(
 				pA, cB, pB, cA), durationAndFuse);
 	}
 
 	// Test for duration = 0h01 and DeltaFuse = 12
 	@Test
 	public void testD0F12() {
+		this.pA = "00:00";
 		this.cB = "12:01";
-		this.cA = "12:01";
+		this.pB = "12:00";
+		this.cA = "00:01";
 		int[] durationAndFuse = { 1, 12 };
 
-		assertEquals(CalculatePlaneFlight.calculateDurationAndFuseDifference(
+		assertArrayEquals(CalculatePlaneFlight.calculateWrongDurationAndFuseDifference(
 				pA, cB, pB, cA), durationAndFuse);
 	}
 
 	// Test for duration = 0h01 and DeltaFuse = 7
 	@Test
 	public void testD0FBetweenNegative11And12() {
+		this.pA = "00:00";
 		this.cB = "07:01";
-		this.cA = "17:01";
+		this.pB = "07:00";
+		this.cA = "00:01";
 		int[] durationAndFuse = { 1, 7 };
 
-		assertEquals(CalculatePlaneFlight.calculateDurationAndFuseDifference(
+		assertArrayEquals(CalculatePlaneFlight.calculateWrongDurationAndFuseDifference(
 				pA, cB, pB, cA), durationAndFuse);
 	}
 
 	// Test for duration = 11h59 and DeltaFuse = -11
 	@Test
 	public void testD719FNegative11() {
-		this.cB = "00:59";
-		this.cA = "23:59";
+		this.pA = "11:00";
+		this.cB = "11:59";
+		this.pB = "00:00";
+		this.cA = "22:59";
 		int[] durationAndFuse = { 719, -11 };
 
-		assertEquals(CalculatePlaneFlight.calculateDurationAndFuseDifference(
+		assertArrayEquals(CalculatePlaneFlight.calculateWrongDurationAndFuseDifference(
 				pA, cB, pB, cA), durationAndFuse);
 	}
 
 	// Test for duration = 11h59 and DeltaFuse = 12
 	@Test
 	public void testD719F12() {
+		this.pA = "00:00";
 		this.cB = "23:59";
-		this.cA = "23:59";
+		this.pB = "12:00";
+		this.cA = "11:59";
 		int[] durationAndFuse = { 719, 12 };
 
-		assertEquals(CalculatePlaneFlight.calculateDurationAndFuseDifference(
+		assertArrayEquals(CalculatePlaneFlight.calculateWrongDurationAndFuseDifference(
 				pA, cB, pB, cA), durationAndFuse);
 	}
 
 	// Test for duration = 11h59 and DeltaFuse = -5
 	@Test
 	public void testD719FBetweenNegative11And12() {
-		this.cB = "07:59";
-		this.cA = "16:59";
-		int[] durationAndFuse = { 710, -5 };
+		this.pA = "15:00";
+		this.cB = "21:59";
+		this.pB = "10:00";
+		this.cA = "02:59";
+		int[] durationAndFuse = { 719, -5 };
 
-		assertEquals(CalculatePlaneFlight.calculateDurationAndFuseDifference(
+		assertArrayEquals(CalculatePlaneFlight.calculateWrongDurationAndFuseDifference(
 				pA, cB, pB, cA), durationAndFuse);
 	}
 
 	// Test for duration = 10h32 and DeltaFuse = -11
 	@Test
 	public void testD632FNegative11() {
-		this.cB = "23:32";
-		this.cA = "21:32";
+		this.pA = "20:00";
+		this.cB = "19:32";
+		this.pB = "09:00";
+		this.cA = "06:32";
 		int[] durationAndFuse = { 632, -11 };
 
-		assertEquals(CalculatePlaneFlight.calculateDurationAndFuseDifference(
+		assertArrayEquals(CalculatePlaneFlight.calculateWrongDurationAndFuseDifference(
 				pA, cB, pB, cA), durationAndFuse);
 	}
 
 	// Test for duration = 5h21 and DeltaFuse = 12
 	@Test
 	public void testD321F12() {
-		this.cB = "17:21";
-		this.cA = "17:21";
+		this.pA = "05:00";
+		this.cB = "22:21";
+		this.pB = "17:00";
+		this.cA = "10:21";
 		int[] durationAndFuse = { 321, 12 };
 
-		assertEquals(CalculatePlaneFlight.calculateDurationAndFuseDifference(
+		assertArrayEquals(CalculatePlaneFlight.calculateWrongDurationAndFuseDifference(
 				pA, cB, pB, cA), durationAndFuse);
 	}
 
 	// Test for duration = 7h54 and DeltaFuse = 0
 	@Test
 	public void testD474F0() {
-		this.cB = "07:54";
-		this.cA = "07:54";
+		this.pA = "13:00";
+		this.cB = "20:54";
+		this.pB = "14:00";
+		this.cA = "21:54";
 		int[] durationAndFuse = { 474, 0 };
 
-		assertEquals(CalculatePlaneFlight.calculateDurationAndFuseDifference(
+		assertArrayEquals(CalculatePlaneFlight.calculateWrongDurationAndFuseDifference(
 				pA, cB, pB, cA), durationAndFuse);
 	}
 }
