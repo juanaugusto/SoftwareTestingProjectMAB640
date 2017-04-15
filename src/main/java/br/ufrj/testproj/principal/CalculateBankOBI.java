@@ -1,10 +1,8 @@
 package br.ufrj.testproj.principal;
 
-import java.util.List;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
-import java.util.stream.Stream;
+import java.util.List;
 
 public class CalculateBankOBI {
 
