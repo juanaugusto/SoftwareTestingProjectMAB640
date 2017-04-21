@@ -12,9 +12,99 @@ public class BankOBITest {
 	int expectNumberClientsWait;
 
 	@Test
-	public void testA1B1C1D1() {
+	public void testNo1() {
 
 		this.C = 1;
+		this.N = 1;
+		this.T = new int[] {0  };
+		this.D = new int[] { 1 };
+
+		this.expectNumberClientsWait = 0;
+
+		assertEquals(expectNumberClientsWait, CalculateBankOBI.calculateWrongBank(this.C, this.N, this.T, this.D));
+	}
+
+	@Test
+	public void testNo2() {
+
+		this.C = 10;
+		this.N = 10;
+		this.T = new int[] { 0,0,0,0,0,150,300,300,300,300 };
+		this.D = new int[] {  8,9,9,9,9,8,9,9,9,9};
+
+		this.expectNumberClientsWait = 0;
+
+		assertEquals(expectNumberClientsWait, CalculateBankOBI.calculateWrongBank(this.C, this.N, this.T, this.D));
+	}
+
+	@Test
+	public void testNo3() {
+
+		this.C = 1;
+		this.N = 10;
+		this.T = new int[] { 0,0,0,0,0,0,0,0,0,0 };
+		this.D = new int[] { 1,8,9,10,9,8,7,9,10,1 };
+
+		this.expectNumberClientsWait = 6;
+		
+		assertEquals(expectNumberClientsWait, CalculateBankOBI.calculateWrongBank(this.C, this.N, this.T, this.D));
+	}
+
+	@Test
+	public void testNo4() {
+
+		this.C = 9;
+		this.N = 1;
+		this.T = new int[] { 150 };
+		this.D = new int[] { 1 };
+
+		this.expectNumberClientsWait = 0;
+		
+		assertEquals(expectNumberClientsWait, CalculateBankOBI.calculateWrongBank(this.C, this.N, this.T, this.D));
+	}
+
+	@Test
+	public void testNo5() {
+
+		this.C = 1;
+		this.N = 10;
+		this.T = new int[] { 150,150,150,150,150,291,292,293,294,295 };
+		this.D = new int[] { 1,1,1,1,1,1,1,1,1,1 };
+
+		this.expectNumberClientsWait = 0;
+		
+		assertEquals(expectNumberClientsWait, CalculateBankOBI.calculateWrongBank(this.C, this.N, this.T, this.D));
+	}
+
+	@Test
+	public void testNo6() {
+		this.C = 5;
+		this.N = 1;
+		this.T = new int[] { 0 };
+		this.D = new int[] {  5};
+
+		this.expectNumberClientsWait = 0;
+
+		assertEquals(expectNumberClientsWait, CalculateBankOBI.calculateWrongBank(this.C, this.N, this.T, this.D));
+	}
+
+	@Test
+	public void testNo7() {
+
+		this.C = 1;
+		this.N = 10;
+		this.T = new int[] { 0,30,30,90,90,91,91,92,93,99 };
+		this.D = new int[] { 9,9,9,9,1,9,9,9,9,9 };
+
+		this.expectNumberClientsWait = 3;
+		
+		assertEquals(expectNumberClientsWait, CalculateBankOBI.calculateWrongBank(this.C, this.N, this.T, this.D));
+	}
+
+	@Test
+	public void testNo8() {
+
+		this.C = 10;
 		this.N = 1;
 		this.T = new int[] { 0 };
 		this.D = new int[] { 1 };
@@ -24,106 +114,5 @@ public class BankOBITest {
 		assertEquals(expectNumberClientsWait, CalculateBankOBI.calculateWrongBank(this.C, this.N, this.T, this.D));
 	}
 
-	@Test
-	public void testA1B2C2D2() {
-
-		this.C = 1;
-		this.N = 10;
-		this.T = new int[] { 300, 300, 300, 300, 300, 300, 300, 300, 300, 300 };
-		this.D = new int[] { 10, 10, 10, 10, 10, 10, 10, 10, 10, 10 };
-
-		this.expectNumberClientsWait = 7;
-
-		assertEquals(expectNumberClientsWait, CalculateBankOBI.calculateWrongBank(this.C, this.N, this.T, this.D));
-	}
-
-	@Test
-	public void testA1B3C3D3() {
-
-		this.C = 1;
-		this.N = 5;
-		this.T = new int[] { 1, 2, 30, 299, 299 };
-		this.D = new int[] { 2, 7, 5, 3, 9 };
-
-		this.expectNumberClientsWait = 0;
-		assertEquals(expectNumberClientsWait, CalculateBankOBI.calculateWrongBank(this.C, this.N, this.T, this.D));
-	}
-
-	@Test
-	public void testA2B1C1D2() {
-
-		this.C = 10;
-		this.N = 1;
-		this.T = new int[] { 0 };
-		this.D = new int[] { 10 };
-
-		this.expectNumberClientsWait = 0;
-		assertEquals(expectNumberClientsWait, CalculateBankOBI.calculateWrongBank(this.C, this.N, this.T, this.D));
-	}
-
-	@Test
-	public void testA2B2C2D3() {
-
-		this.C = 10;
-		this.N = 10;
-		this.T = new int[] { 300, 300, 300, 300, 300, 300, 300, 300, 300, 300 };
-		this.D = new int[] { 2, 9, 5, 2, 6, 5, 9, 4, 3, 6 };
-
-		this.expectNumberClientsWait = 0;
-
-		assertEquals(expectNumberClientsWait, CalculateBankOBI.calculateWrongBank(this.C, this.N, this.T, this.D));
-	}
-
-	@Test
-	public void testA2B3C3D1() {
-
-		this.C = 10;
-		this.N = 5;
-		this.T = new int[] { 1, 10, 20, 100, 299 };
-		this.D = new int[] { 1, 1, 1, 1, 1 };
-
-		this.expectNumberClientsWait = 0;
-
-		assertEquals(expectNumberClientsWait, CalculateBankOBI.calculateWrongBank(this.C, this.N, this.T, this.D));
-	}
-
-	@Test
-	public void testA3B1C1D3() {
-
-		this.C = 8;
-		this.N = 1;
-		this.T = new int[] { 0 };
-		this.D = new int[] { 7 };
-
-		this.expectNumberClientsWait = 0;
-
-		assertEquals(expectNumberClientsWait, CalculateBankOBI.calculateWrongBank(this.C, this.N, this.T, this.D));
-	}
-
-	@Test
-	public void testA3B2C2D1() {
-
-		this.C = 2;
-		this.N = 10;
-		this.T = new int[] { 300, 300, 300, 300, 300, 300, 300, 300, 300, 300 };
-		this.D = new int[] { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
-
-		this.expectNumberClientsWait = 0;
-
-		assertEquals(expectNumberClientsWait, CalculateBankOBI.calculateWrongBank(this.C, this.N, this.T, this.D));
-	}
-
-	@Test
-	public void testA3B3C3D2() {
-
-		this.C = 2;
-		this.N = 9;
-		this.T = new int[] { 1, 8, 291, 292, 293, 294, 297, 298, 299 };
-		this.D = new int[] { 10, 10, 10, 10, 10, 10, 10, 10, 10 };
-
-		this.expectNumberClientsWait = 1;
-
-		assertEquals(expectNumberClientsWait, CalculateBankOBI.calculateWrongBank(this.C, this.N, this.T, this.D));
-	}
 
 }
