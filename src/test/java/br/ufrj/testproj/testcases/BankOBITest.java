@@ -16,7 +16,7 @@ public class BankOBITest {
 
 		this.C = 1;
 		this.N = 1;
-		this.T = new int[] {0  };
+		this.T = new int[] { 0 };
 		this.D = new int[] { 1 };
 
 		this.expectNumberClientsWait = 0;
