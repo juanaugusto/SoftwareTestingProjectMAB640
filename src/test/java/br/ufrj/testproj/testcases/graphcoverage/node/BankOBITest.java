@@ -39,14 +39,20 @@ public class BankOBITest {
 	@Test
 	public void testPathNumber4(){
 		//Infeasible path
+				
+	}
+	
+	@Test
+	public void testPathNumber5(){
 		this.C = 1;
 		this.N = 2;
 		this.T = new int[] { 0, 0 };
 		this.D = new int[] { 3, 3 };
 
-		this.expectNumberClientsWait = 0;
+		this.expectNumberClientsWait = 1;
 
 		assertEquals(expectNumberClientsWait, CalculateBankOBI.calculateWrongBank(this.C, this.N, this.T, this.D));
+
 		
 	}
 
