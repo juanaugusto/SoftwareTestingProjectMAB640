@@ -1,13 +1,20 @@
 package br.ufrj.testproj.principal;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.TreeSet;
+
 public class CalculatePalindromeOBI {
 	private static void noop() {
 
 	}
 
 	public static String calculateWrongPalindrome(char[] letras) {
-		//Numero 1
-		System.out.print("1 ");
+		List<Integer> list = new ArrayList<Integer>();
+		
+		// Number 1
+		list.add(1);
 		noop();
 		String retorno;
 		int contador_texto, i, j;
@@ -17,68 +24,106 @@ public class CalculatePalindromeOBI {
 		contador_texto = 0;
 		noop();
 		
-		//Numero 2
-		System.out.print("2 ");
+		//Number 2
+		list.add(2);
 		for (char letra : letras) {
 			
-			//Numero 3
-			System.out.print("3 ");
+			// Number 3
+			list.add(3);
 			if (letra != ' ') {
 				
-				//Numero 4
-				System.out.print("4 ");
+				// Number 4
+				list.add(4);
 				texto[contador_texto] = letra;
 				contador_texto++;
 			}
 			
-			//Numero 5
-			System.out.print("5 ");
+			// Number 5
+			list.add(5);
 			noop();
 			noop();
+			
+			if (list.get(list.size()-1) != 2){
+				list.add(2);
+			}
 		}
 		
-		//Numero 6
-		System.out.print("6 ");
+		// Number 6
+		list.add(6);
 		i = 0;
 		j = contador_texto - 1;
 		palindromo = 1;
 		
-		//Numero 7
-		System.out.print("7 ");
+		// Number 7
+		list.add(7);
 		while (j > i) {
 			
-			//Numero 8
-			System.out.print("8 ");
+			// Number 8
+			list.add(8);
 			if (texto[i] != texto[j]) {
 			
-				//Numero 9
-				System.out.print("9 ");
+				// Number 9
+				list.add(9);
 				palindromo = 0;
 			}
 			
-			//Numero 10
-			System.out.print("10 ");
+			// Number 10
+			list.add(10);
 			i = i + 1;
 			j = j - 1;
+			
+			if (list.get(list.size()-1) != 7){
+				list.add(7);
+			}
 		}
 		
-		//Numero 11
-		System.out.print("11 ");
+		// Number 11
+		list.add(11);
 		if (palindromo == 1) {
 			
-			//Numero 12
-			System.out.print("12 ");
+			// Number 12
+			list.add(12);
 			retorno = "SIM";
 		} else {
 			
-			//Numero 13
-			System.out.print("13 ");
+			// Number 13
+			list.add(13);
 			retorno = "NAO";
 		}
 		
-		//Numero 14
-		System.out.print("14 ");
+		// Number 14
+		list.add(14);
+		
+		System.out.println("Entrada: "+Arrays.toString(letras));
+		System.out.println("Saída: "+retorno);
+		System.out.println("Caminho Percorrido: " + list.toString());
+		System.out.println("Nós atingidos: " + new TreeSet<Integer>(list));
+		System.out.print("Arcos atingidos: ");
+		int k = 0;
+		while(true){
+			if(k < list.size() - 1 ){
+				//par [list.get(k), list.get(k+1)]
+				System.out.print("["+list.get(k)+", "+list.get(k+1)+"], ");
+				k++;
+			}else{
+				break;
+			}
+		}
 		System.out.println();
+		System.out.print("Pares de Arcos atingidos: ");
+		k = 0;
+		while(true){
+			if(k < list.size() - 2 ){
+				//par [list.get(k), list.get(k+1)]
+				int[] bak = {list.get(k), list.get(k+1), list.get(k+2)};
+				System.out.print(Arrays.toString(bak) + ", ");
+				k++;
+			}else{
+				break;
+			}
+		}
+		System.out.println();
+		//System.out.println("Caminhos Primos atingidos: ");
 		return retorno;
 	}
 
