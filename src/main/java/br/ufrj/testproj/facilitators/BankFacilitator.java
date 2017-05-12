@@ -5,18 +5,19 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class BankMakeCalcs {
+public class BankFacilitator {
 	
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
 		int[] nodeRequirements;
-		int[][] edgeRequirements;
-		int[][] edgePairRequirements;
+		Integer[][] edgeRequirements;
+		Integer[][] edgePairRequirements;
 		Integer[][] primePathsRequirements;
 		int[][] inputs;
 		
@@ -25,13 +26,14 @@ public class BankMakeCalcs {
 		Set<int[]> edgePairsReached;
 		Set<int[]> primePathsReached;
 		
+		Integer[][] insatisfablePaths = { {3,4,5}, {8,7} };
 		nodeRequirements = new int [] { 1,2,3,4,5,6,7,8,9,10,11,12,13,14 };
-		edgeRequirements = new int [][] { 
+		edgeRequirements = new Integer [][] { 
 			{1, 2}, {1, 3}, {3, 4}, {4, 5}, {4, 6}, {6, 7}, {7, 8}, {7, 10}, 
 			{8, 7}, {8, 9}, {9, 10}, {10, 11}, {10, 12}, {11, 14}, {12, 13}, 
 			{12, 14}, {13, 14}, {14, 4}
 		};
-		edgePairRequirements = new int [][] {
+		edgePairRequirements = new Integer [][] {
 			{1, 2}, {1, 3, 4}, {3, 4, 5}, {3, 4, 6}, {4, 6, 7}, {6, 7, 8},
 			{6, 7, 10}, {7, 8, 7}, {7, 8, 9}, {7, 10, 11}, {7, 10, 12}, 
 			{8, 7, 8}, {8, 7, 10}, {8, 9, 10}, {9, 10, 11}, {9, 10, 12}, 
@@ -69,10 +71,34 @@ public class BankMakeCalcs {
 		
 		
 		// C N , T[] and D[]
+		
+		
+		// meet Node Requirements
+//		inputs = new int[][] {
+//			{1}, {1}, {0}, {1},
+//			{1}, {10}, {0,5,10,15,20,25,30,30,30,30}, {4,5,6,6,5,4,10,10,10,10},
+//		};
+		
+		// meet Edge Requirements
+//		inputs = new int[][] {
+//			{2}, {2}, {0, 0}, {1, 1},
+//			{1}, {10}, {0,5,10,15,20,25,30,30,30,30}, {1,2,3,4,5,6,7,8,9,10},
+//		};
+		
+		// meet Edge-Pair Requirements
+//		inputs = new int[][] {
+//			{2}, {2}, {0, 0}, {1, 1},
+//			{1}, {10}, {0,5,10,15,20,25,30,30,30,30}, {1,2,3,4,5,6,7,8,9,10},
+//			{3}, {10}, {0,3,6,9,12,15,18,21,24,27}, {9,9,9,9,9,9,9,9,9,9},
+//		};		
+		
+		// meet Prime Path Requirements
 		inputs = new int[][] {
-			{1}, {1}, {0}, {1},
-			{2}, {3}, {0,0,0}, {1,1,1},
-		};
+			{2}, {2}, {0,0}, {1,1},
+			{1}, {10}, {0,5,10,15,20,25,30,30,30,30}, {1,2,3,4,5,6,7,8,9,10},
+			{3}, {10}, {0,3,6,9,12,15,18,21,24,27}, {9,9,9,9,9,9,9,9,9,9},
+			{1}, {3}, {0,3,6}, {9,9,9},
+	    };	
 		
 		nodesReached = new TreeSet<Integer>();
 		edgesReached = new TreeSet<int[]>(new Comparator<int[]>() {
@@ -104,28 +130,30 @@ public class BankMakeCalcs {
 			nodesReached.addAll(pathTraveled);
 			
 			// Edge Coverage
-			int k = 0;
-			while(true){
-				if(k < pathTraveled.size() - 1 ){
+			for(Integer[] edgeRequirement: edgeRequirements){
+				// check if pathTraveled contains primePathRequirement
+				
+				if(Collections.indexOfSubList(pathTraveled, 
+						Arrays.asList(edgeRequirement)) >= 0){
+					int[] intArray = Arrays.stream(edgeRequirement).mapToInt(Integer::intValue).toArray();
 					edgesReached.add(
-						new int[] {pathTraveled.get(k), pathTraveled.get(k+1)}
+						intArray
 					);
-					k++;
-				}else{
-					break;
+				
 				}
 			}
 			
 			// Edge-Pair Coverage
-			k = 0;
-			while(true){
-				if(k < pathTraveled.size() - 2 ){
+			for(Integer[] edgePairRequirement: edgePairRequirements){
+				// check if pathTraveled contains primePathRequirement
+				
+				if(Collections.indexOfSubList(pathTraveled, 
+						Arrays.asList(edgePairRequirement)) >= 0){
+					int[] intArray = Arrays.stream(edgePairRequirement).mapToInt(Integer::intValue).toArray();
 					edgePairsReached.add(
-						new int[] {pathTraveled.get(k), pathTraveled.get(k+1), pathTraveled.get(k+2)}
+						intArray
 					);
-					k++;
-				}else{
-					break;
+				
 				}
 			}
 			
@@ -156,8 +184,10 @@ public class BankMakeCalcs {
 		System.out.println();
 		
 		System.out.println("Edges not reached: ");
-		for(int[] s: edgeRequirements){
-			if(!edgesReached.contains(s)){
+		for(Integer[] s: edgeRequirements){
+			int[] intArray = Arrays.stream(s).mapToInt(Integer::intValue).toArray();
+
+			if(!edgesReached.contains(intArray)){
 				System.out.println(Arrays.toString(s));
 			}
 		}
@@ -165,8 +195,10 @@ public class BankMakeCalcs {
 		System.out.println();
 		
 		System.out.println("Edge-Pairs not reached: ");
-		for(int[] s: edgePairRequirements){
-			if(!edgePairsReached.contains(s)){
+		for(Integer[] s: edgePairRequirements){
+			int[] intArray = Arrays.stream(s).mapToInt(Integer::intValue).toArray();
+
+			if(!edgePairsReached.contains(intArray)){
 				System.out.println(Arrays.toString(s));
 			}
 		}
@@ -257,7 +289,13 @@ public class BankMakeCalcs {
 				} 
 
 				else {
-					Integer atendimento = Collections.min(termina);
+					Integer atendimento;
+					try{
+						atendimento = Collections.min(termina);
+					}catch(NoSuchElementException e){
+						atendimento = -1;
+					}
+					
 					termina.remove(atendimento);
 					termina.add(atendimento + tempos[i][1]);
 					
