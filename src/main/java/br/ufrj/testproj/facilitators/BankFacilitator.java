@@ -120,47 +120,53 @@ public class BankFacilitator {
 	        }
 	    });
 				
+		System.out.println("Printing Paths:");
 		for(int i = 0; i < inputs.length; i=i+4){
 			ArrayList<Integer> pathTraveled = calculateWrongBank(inputs[i][0], 
 																inputs[i+1][0],
 																inputs[i+2],
 																inputs[i+3]);
+			System.out.println("Path traveled: "+ pathTraveled);
 			
 			// Node Coverage
 			nodesReached.addAll(pathTraveled);
+			System.out.println("Nodes reached: "+ nodesReached);
 			
 			// Edge Coverage
+			System.out.print("Edges Reached: ");
 			for(Integer[] edgeRequirement: edgeRequirements){
-				// check if pathTraveled contains primePathRequirement
-				
+				// check if pathTraveled contains primePathRequirement				
 				if(Collections.indexOfSubList(pathTraveled, 
 						Arrays.asList(edgeRequirement)) >= 0){
 					int[] intArray = Arrays.stream(edgeRequirement).mapToInt(Integer::intValue).toArray();
+					System.out.print(Arrays.asList(edgeRequirement)+" ");
 					edgesReached.add(
 						intArray
 					);
 				
 				}
 			}
+			System.out.println();			
 			
 			// Edge-Pair Coverage
+			System.out.print("Edge-Pairs Reached: ");
 			for(Integer[] edgePairRequirement: edgePairRequirements){
-				// check if pathTraveled contains primePathRequirement
-				
+				// check if pathTraveled contains primePathRequirement			
 				if(Collections.indexOfSubList(pathTraveled, 
 						Arrays.asList(edgePairRequirement)) >= 0){
 					int[] intArray = Arrays.stream(edgePairRequirement).mapToInt(Integer::intValue).toArray();
+					System.out.print(Arrays.asList(edgePairRequirement)+" ");
 					edgePairsReached.add(
 						intArray
 					);
 				
 				}
 			}
-			
+			System.out.println();			
+
 			// Prime Path Coverage
 			for(Integer[] primePathRequirement: primePathsRequirements){
-				// check if pathTraveled contains primePathRequirement
-				
+				// check if pathTraveled contains primePathRequirement				
 				if(Collections.indexOfSubList(pathTraveled, 
 						Arrays.asList(primePathRequirement)) >= 0){
 					int[] intArray = Arrays.stream(primePathRequirement).mapToInt(Integer::intValue).toArray();
@@ -170,7 +176,7 @@ public class BankFacilitator {
 				
 				}
 			}
-			
+			System.out.println();
 			
 		}
 		
@@ -237,6 +243,7 @@ public class BankFacilitator {
 
 			list.add(2);
 			// Number 2
+			System.out.println("Output: "+0);
 			return list;
 		}
 		
@@ -319,6 +326,7 @@ public class BankFacilitator {
 			
 			list.add(5);
 			// Number 5
+			System.out.println("Output: "+cont);
 			return list;
 
 		}

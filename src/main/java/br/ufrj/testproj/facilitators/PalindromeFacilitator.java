@@ -14,8 +14,8 @@ public class PalindromeFacilitator {
 		// TODO Auto-generated method stub
 		
 		int[] nodeRequirements;
-		int[][] edgeRequirements;
-		int[][] edgePairRequirements;
+		Integer[][] edgeRequirements;
+		Integer[][] edgePairRequirements;
 		Integer[][] primePathsRequirements;
 		char[][] inputs;
 		
@@ -25,12 +25,12 @@ public class PalindromeFacilitator {
 		Set<int[]> primePathsReached;
 		
 		nodeRequirements = new int [] { 1,2,3,4,5,6,7,8,9,10,11,12,13,14 };
-		edgeRequirements = new int [][] { 
+		edgeRequirements = new Integer [][] { 
 			{1, 2}, {2, 3}, {2, 6}, {3, 4}, {3, 5}, {4, 5}, {5, 2}, {6, 7}, 
 			{7, 8}, {7, 11}, {8, 9}, {8, 10}, {9, 10}, {10, 7}, {11, 12}, {11, 13},
 			{12, 14}, {13, 14}
 		};
-		edgePairRequirements = new int [][] {
+		edgePairRequirements = new Integer [][] {
 			{1, 2, 3}, {1, 2, 6}, {2, 3, 4}, {2, 3, 5}, {2, 6, 7}, {3, 5, 2}, 
 			{3, 4, 5}, {4, 5, 2}, {5, 2, 3}, {5, 2, 6}, {6, 7, 8}, {6, 7, 11}, 
 			{7, 8, 9}, {7, 8, 10},  {7, 11, 12}, {7, 11, 13}, {8, 9, 10}, {8, 10, 7}, 
@@ -80,35 +80,39 @@ public class PalindromeFacilitator {
 	        }
 	    });
 		
+		System.out.println("Printing Paths:");
 		for(char[] input: inputs){
 			ArrayList<Integer> pathTraveled = calculateWrongPalindrome(input);
+			System.out.println(pathTraveled);
 			
 			// Node Coverage
 			nodesReached.addAll(pathTraveled);
 			
 			// Edge Coverage
-			int k = 0;
-			while(true){
-				if(k < pathTraveled.size() - 1 ){
+			for(Integer[] edgeRequirement: edgeRequirements){
+				// check if pathTraveled contains primePathRequirement
+				
+				if(Collections.indexOfSubList(pathTraveled, 
+						Arrays.asList(edgeRequirement)) >= 0){
+					int[] intArray = Arrays.stream(edgeRequirement).mapToInt(Integer::intValue).toArray();
 					edgesReached.add(
-						new int[] {pathTraveled.get(k), pathTraveled.get(k+1)}
+						intArray
 					);
-					k++;
-				}else{
-					break;
+				
 				}
 			}
 			
 			// Edge-Pair Coverage
-			k = 0;
-			while(true){
-				if(k < pathTraveled.size() - 2 ){
+			for(Integer[] edgePairRequirement: edgePairRequirements){
+				// check if pathTraveled contains primePathRequirement
+				
+				if(Collections.indexOfSubList(pathTraveled, 
+						Arrays.asList(edgePairRequirement)) >= 0){
+					int[] intArray = Arrays.stream(edgePairRequirement).mapToInt(Integer::intValue).toArray();
 					edgePairsReached.add(
-						new int[] {pathTraveled.get(k), pathTraveled.get(k+1), pathTraveled.get(k+2)}
+						intArray
 					);
-					k++;
-				}else{
-					break;
+				
 				}
 			}
 			
@@ -124,10 +128,10 @@ public class PalindromeFacilitator {
 					);
 				
 				}
-			}
-			
-			
+			}						
 		}
+		
+		
 		
 		System.out.println("Nodes not reached: ");
 		for(int s: nodeRequirements){
@@ -139,18 +143,21 @@ public class PalindromeFacilitator {
 		System.out.println();
 		
 		System.out.println("Edges not reached: ");
-		for(int[] s: edgeRequirements){
-			if(!edgesReached.contains(s)){
+		for(Integer[] s: edgeRequirements){
+			int[] intArray = Arrays.stream(s).mapToInt(Integer::intValue).toArray();
+
+			if(!edgesReached.contains(intArray)){
 				System.out.println(Arrays.toString(s));
 			}
 		}
-		
 		System.out.println("How many Edges reached: "+ edgesReached.size());
 		System.out.println();
 		
-		System.out.println("Edge-Pairs reached: ");
-		for(int[] s: edgePairRequirements){
-			if(!edgePairsReached.contains(s)){
+		System.out.println("Edge-Pairs not reached: ");
+		for(Integer[] s: edgePairRequirements){
+			int[] intArray = Arrays.stream(s).mapToInt(Integer::intValue).toArray();
+
+			if(!edgePairsReached.contains(intArray)){
 				System.out.println(Arrays.toString(s));
 			}
 		}
@@ -167,7 +174,6 @@ public class PalindromeFacilitator {
 		}
 		System.out.println("How many Prime Paths reached: "+ primePathsReached.size());
 		System.out.println();
-		
 		
 		
 	}
