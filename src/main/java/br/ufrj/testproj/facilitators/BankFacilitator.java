@@ -26,7 +26,6 @@ public class BankFacilitator {
 		Set<int[]> edgePairsReached;
 		Set<int[]> primePathsReached;
 		
-		Integer[][] insatisfablePaths = { {3,4,5}, {8,7}, {1, 3, 4, 6, 7, 8, 9, 10, 12, 13, 14} };
 		nodeRequirements = new int [] { 1,2,3,4,5,6,7,8,9,10,11,12,13,14 };
 		edgeRequirements = new Integer [][] { 
 			{1, 2}, {1, 3}, {3, 4}, {4, 5}, {4, 6}, {6, 7}, {7, 8}, {7, 10}, 
@@ -70,8 +69,7 @@ public class BankFacilitator {
 		};
 		
 		
-		// C N , T[] and D[]
-		
+		// C, N , T[] and D[]	
 		
 		// meet Node Requirements
 //		inputs = new int[][] {
@@ -83,6 +81,7 @@ public class BankFacilitator {
 //		inputs = new int[][] {
 //			{2}, {2}, {0, 0}, {1, 1},
 //			{1}, {10}, {0,5,10,15,20,25,30,30,30,30}, {1,2,3,4,5,6,7,8,9,10},
+//			{3}, {4}, {0,2,4,4}, {3,1,1,1}
 //		};
 		
 		// meet Edge-Pair Requirements
@@ -90,15 +89,25 @@ public class BankFacilitator {
 //			{2}, {2}, {0, 0}, {1, 1},
 //			{1}, {10}, {0,5,10,15,20,25,30,30,30,30}, {1,2,3,4,5,6,7,8,9,10},
 //			{3}, {10}, {0,3,6,9,12,15,18,21,24,27}, {9,9,9,9,9,9,9,9,9,9},
+//			{3}, {4}, {0,2,4,4}, {3,1,1,1},
+//			{3}, {4}, {0,2,4,4}, {3,3,3,1}
 //		};		
 		
 		// meet Prime Path Requirements
 		inputs = new int[][] {
-			{2}, {2}, {0,0}, {1,1},
+			{2}, {2}, {0, 0}, {1, 1},
 			{1}, {10}, {0,5,10,15,20,25,30,30,30,30}, {1,2,3,4,5,6,7,8,9,10},
 			{3}, {10}, {0,3,6,9,12,15,18,21,24,27}, {9,9,9,9,9,9,9,9,9,9},
-			{1}, {3}, {0,3,6}, {9,9,9},
-	    };	
+			{3}, {4}, {0,2,4,4}, {3,1,1,1},
+			{3}, {4}, {0,2,4,4}, {3,3,3,1}
+		};	
+		
+//		inputs = new int[][] {
+//			{2}, {2}, {0, 0}, {1, 1},
+//			{1}, {10}, {0,5,10,15,20,25,30,30,30,30}, {1,2,3,4,5,6,7,8,9,10},
+//			{3}, {10}, {0,3,6,9,12,15,18,21,24,27}, {9,9,9,9,9,9,9,9,9,9},
+//			{3}, {4}, {0,2,4,4}, {3,1,1,1}
+//		};
 		
 		nodesReached = new TreeSet<Integer>();
 		edgesReached = new TreeSet<int[]>(new Comparator<int[]>() {
@@ -180,6 +189,8 @@ public class BankFacilitator {
 			
 		}
 		
+		System.out.println("\n\nPrinting General Statistics");
+		
 		System.out.println("Nodes not reached: ");
 		for(int s: nodeRequirements){
 			if(!nodesReached.contains(s)){
@@ -211,7 +222,7 @@ public class BankFacilitator {
 		System.out.println("How many Edge-Pairs reached: "+ edgePairsReached.size());
 		System.out.println();
 		
-		System.out.println("Prime Paths not reached: ");
+		System.out.println("Prime Paths not already reached: ");
 		for(Integer[] s: primePathsRequirements){
 			int[] intArray = Arrays.stream(s).mapToInt(Integer::intValue).toArray();
 

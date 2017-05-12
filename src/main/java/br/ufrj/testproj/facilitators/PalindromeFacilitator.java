@@ -49,6 +49,37 @@ public class PalindromeFacilitator {
 			{8,10,7,8}, {7,8,10,7}
 		};
 		
+		// Node Coverage
+//		inputs = new char[][] {
+//			{'a', ' ', 'a'},
+//			{'b', 'x'},
+//		};
+		
+		// Edge Coverage
+//		inputs = new char[][] {
+//			{'a', ' ', 'a'},
+//			{'b', 'x'},
+//		};
+		
+		// Edge Pair Coverage
+//		inputs = new char[][] {
+//			{'a', 'a', ' ', 'a', 'a',},
+//			{'b', 'x'},
+//			{}
+//		};
+		
+//		// Prime Path Coverage
+//		inputs = new char[][] {
+//			{'b', 'y', 'b', 'y', 'b', 'y', 'a', 'b'},
+//			{'a', 'a', ' ', 'a', 'a'},
+//			{'a', 'a', 'a', 'a', 'a'},
+//			{'a'},
+//			{'a','a'},
+//			{'b', 'x'},
+//			{},
+//			{' '},
+//		};
+		
 		inputs = new char[][] {
 			{'b', 'y', 'b', 'y', 'b', 'y', 'a', 'b'},
 			{'a', 'a', ' ', 'a', 'a'},
@@ -80,10 +111,10 @@ public class PalindromeFacilitator {
 	        }
 	    });
 		
-		System.out.println("Printing Paths:");
+		//System.out.println("Printing Paths:");
 		for(char[] input: inputs){
 			ArrayList<Integer> pathTraveled = calculateWrongPalindrome(input);
-			System.out.println(pathTraveled);
+			//System.out.println(pathTraveled);
 			
 			// Node Coverage
 			nodesReached.addAll(pathTraveled);
