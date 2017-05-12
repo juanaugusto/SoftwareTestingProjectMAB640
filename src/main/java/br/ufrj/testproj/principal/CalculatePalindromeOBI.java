@@ -102,8 +102,8 @@ public class CalculatePalindromeOBI {
 		int k = 0;
 		while(true){
 			if(k < list.size() - 1 ){
-				//par [list.get(k), list.get(k+1)]
-				System.out.print("["+list.get(k)+", "+list.get(k+1)+"], ");
+				int[] bak = {list.get(k), list.get(k+1)};
+				System.out.print(Arrays.toString(bak) + ", ");
 				k++;
 			}else{
 				break;
@@ -114,7 +114,6 @@ public class CalculatePalindromeOBI {
 		k = 0;
 		while(true){
 			if(k < list.size() - 2 ){
-				//par [list.get(k), list.get(k+1)]
 				int[] bak = {list.get(k), list.get(k+1), list.get(k+2)};
 				System.out.print(Arrays.toString(bak) + ", ");
 				k++;
