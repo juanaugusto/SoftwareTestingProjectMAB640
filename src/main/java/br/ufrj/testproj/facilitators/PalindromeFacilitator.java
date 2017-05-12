@@ -85,7 +85,7 @@ public class PalindromeFacilitator {
 			{'a', 'a', ' ', 'a', 'a'},
 			{'a', 'a', 'a', 'a', 'a'},
 			{'a'},
-			{'a','a'},
+			{'a', 'a'},
 			{'b', 'x'},
 			{},
 			{' '},
@@ -111,10 +111,10 @@ public class PalindromeFacilitator {
 	        }
 	    });
 		
-		//System.out.println("Printing Paths:");
+		System.out.println("Printing Paths:");
 		for(char[] input: inputs){
 			ArrayList<Integer> pathTraveled = calculateWrongPalindrome(input);
-			//System.out.println(pathTraveled);
+			System.out.println(pathTraveled);
 			
 			// Node Coverage
 			nodesReached.addAll(pathTraveled);
