@@ -26,7 +26,7 @@ public class BankFacilitator {
 		Set<int[]> edgePairsReached;
 		Set<int[]> primePathsReached;
 		
-		Integer[][] insatisfablePaths = { {3,4,5}, {8,7} };
+		Integer[][] insatisfablePaths = { {3,4,5}, {8,7}, {1, 3, 4, 6, 7, 8, 9, 10, 12, 13, 14} };
 		nodeRequirements = new int [] { 1,2,3,4,5,6,7,8,9,10,11,12,13,14 };
 		edgeRequirements = new Integer [][] { 
 			{1, 2}, {1, 3}, {3, 4}, {4, 5}, {4, 6}, {6, 7}, {7, 8}, {7, 10}, 
