@@ -1,4 +1,4 @@
-package br.ufrj.testproj.testcases;
+package br.ufrj.testproj.facilitators;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -139,7 +139,7 @@ public class PalindromeMakeCalcs {
 		System.out.println();
 		
 		System.out.println("Edges not reached: ");
-		for(int[] s: edgesReached){
+		for(int[] s: edgeRequirements){
 			if(!edgesReached.contains(s)){
 				System.out.println(Arrays.toString(s));
 			}
@@ -149,7 +149,7 @@ public class PalindromeMakeCalcs {
 		System.out.println();
 		
 		System.out.println("Edge-Pairs reached: ");
-		for(int[] s: edgePairsReached){
+		for(int[] s: edgePairRequirements){
 			if(!edgePairsReached.contains(s)){
 				System.out.println(Arrays.toString(s));
 			}

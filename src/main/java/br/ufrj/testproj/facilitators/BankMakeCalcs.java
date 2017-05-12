@@ -1,4 +1,4 @@
-package br.ufrj.testproj.principal;
+package br.ufrj.testproj.facilitators;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -70,7 +70,8 @@ public class BankMakeCalcs {
 		
 		// C N , T[] and D[]
 		inputs = new int[][] {
-			
+			{1}, {1}, {0}, {1},
+			{2}, {3}, {0,0,0}, {1,1,1},
 		};
 		
 		nodesReached = new TreeSet<Integer>();
@@ -92,9 +93,12 @@ public class BankMakeCalcs {
 	        	return Arrays.equals(o1, o2)? 0 : Arrays.hashCode(o1) - Arrays.hashCode(o2);
 	        }
 	    });
-		
-		for(int[] input: inputs){
-			ArrayList<Integer> pathTraveled = calculateWrongBank(input);
+				
+		for(int i = 0; i < inputs.length; i=i+4){
+			ArrayList<Integer> pathTraveled = calculateWrongBank(inputs[i][0], 
+																inputs[i+1][0],
+																inputs[i+2],
+																inputs[i+3]);
 			
 			// Node Coverage
 			nodesReached.addAll(pathTraveled);
@@ -152,17 +156,16 @@ public class BankMakeCalcs {
 		System.out.println();
 		
 		System.out.println("Edges not reached: ");
-		for(int[] s: edgesReached){
+		for(int[] s: edgeRequirements){
 			if(!edgesReached.contains(s)){
 				System.out.println(Arrays.toString(s));
 			}
 		}
-		
 		System.out.println("How many Edges reached: "+ edgesReached.size());
 		System.out.println();
 		
-		System.out.println("Edge-Pairs reached: ");
-		for(int[] s: edgePairsReached){
+		System.out.println("Edge-Pairs not reached: ");
+		for(int[] s: edgePairRequirements){
 			if(!edgePairsReached.contains(s)){
 				System.out.println(Arrays.toString(s));
 			}
@@ -276,8 +279,7 @@ public class BankMakeCalcs {
 				// Number 4
 			}
 			
-			System.out.print("5 ");
-			System.out.println();
+			list.add(5);
 			// Number 5
 			return list;
 
