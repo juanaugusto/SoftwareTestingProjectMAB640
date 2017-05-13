@@ -90,15 +90,18 @@ public class BankFacilitator extends Facilitator {
 		};
 		
 		for(int i = 0; i < inputs.length; i=i+4){
-			ArrayList<Integer> pathTraveled = new CalculateBankOBI()
+			CalculateBankOBI bank = new CalculateBankOBI()
 					.calculateWrongBank(
-						inputs[i][0], 
-						inputs[i+1][0],
-						inputs[i+2],
-						inputs[i+3]
-					)
-					.getPathPercurred();
+							inputs[i][0], 
+							inputs[i+1][0],
+							inputs[i+2],
+							inputs[i+3]
+					);
 			
+			ArrayList<Integer> pathTraveled = bank.getPathPercurred();
+			int output = bank.getReturnedValue();
+			
+			System.out.println("Output: "+output);
 			calculateReachedForCriterias(pathTraveled);
 
 		}
