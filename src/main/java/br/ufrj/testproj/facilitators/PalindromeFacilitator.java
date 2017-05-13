@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -23,6 +24,8 @@ public class PalindromeFacilitator {
 		Set<int[]> edgesReached;
 		Set<int[]> edgePairsReached;
 		Set<int[]> primePathsReached;
+		
+		Set<int[]> infeasiblePrimePaths;
 		
 		nodeRequirements = new int [] { 1,2,3,4,5,6,7,8,9,10,11,12,13,14 };
 		edgeRequirements = new Integer [][] { 
@@ -49,6 +52,18 @@ public class PalindromeFacilitator {
 			{8,10,7,8}, {7,8,10,7}
 		};
 		
+		infeasiblePrimePaths = new TreeSet<int[]>(new Comparator<int[]>() {
+	        @Override
+	        public int compare(int[] o1, int[] o2) {
+	        	return Arrays.equals(o1, o2)? 0 : Arrays.hashCode(o1) - Arrays.hashCode(o2);
+	        }
+	    });
+		infeasiblePrimePaths.add(new int[] {3, 4, 5, 2, 6, 7, 11, 13, 14});
+		infeasiblePrimePaths.add(new int[] {1, 2, 6, 7, 8, 10});
+		infeasiblePrimePaths.add(new int[] {1, 2, 6, 7, 11, 13, 14});
+		infeasiblePrimePaths.add(new int[] {1, 2, 6, 7, 8, 9, 10});
+		infeasiblePrimePaths.add(new int[] {3, 5, 2, 6, 7, 11, 13, 14});
+
 		// Node Coverage
 //		inputs = new char[][] {
 //			{'a', ' ', 'a'},
@@ -81,12 +96,12 @@ public class PalindromeFacilitator {
 //		};
 		
 		inputs = new char[][] {
-			{'b', 'y', 'b', 'y', 'b', 'y', 'a', 'b'},
+			{'b', 'c', 'b', 'y', 'c', 'b'},
+			{'b', 'y', 'b', 'y', 'b', 'y', 'a', 'c', ' '},
 			{'a', 'a', ' ', 'a', 'a'},
-			{'a', 'a', 'a', 'a', 'a'},
-			{'a'},
-			{'a', 'a'},
+			{' ', 'a', ' ','a', ' '},
 			{'b', 'x'},
+			{'a'},
 			{},
 			{' '},
 		};
@@ -118,6 +133,7 @@ public class PalindromeFacilitator {
 			
 			// Node Coverage
 			nodesReached.addAll(pathTraveled);
+			System.out.println("Nodes reached: "+ new TreeSet<Integer>(pathTraveled));
 			
 			// Edge Coverage
 			for(Integer[] edgeRequirement: edgeRequirements){
@@ -159,7 +175,9 @@ public class PalindromeFacilitator {
 					);
 				
 				}
-			}						
+			}		
+			
+			System.out.println();
 		}
 		
 		
@@ -198,8 +216,8 @@ public class PalindromeFacilitator {
 		System.out.println("Prime Paths not reached: ");
 		for(Integer[] s: primePathsRequirements){
 			int[] intArray = Arrays.stream(s).mapToInt(Integer::intValue).toArray();
-
-			if(!primePathsReached.contains(intArray)){
+ 
+			if(!primePathsReached.contains(intArray) && !infeasiblePrimePaths.contains(intArray)){
 				System.out.println(Arrays.toString(s));
 			}
 		}
@@ -227,7 +245,7 @@ public class PalindromeFacilitator {
 		contador_texto = 0;
 		noop();
 		
-		//Number 2
+		// Number 2
 		list.add(2);
 		for (char letra : letras) {
 			
@@ -246,9 +264,9 @@ public class PalindromeFacilitator {
 			noop();
 			noop();
 			
-			if (list.get(list.size()-1) != 2){
-				list.add(2);
-			}
+			// Number 2
+			list.add(2);
+			
 		}
 		
 		// Number 6
@@ -275,9 +293,9 @@ public class PalindromeFacilitator {
 			i = i + 1;
 			j = j - 1;
 			
-			if (list.get(list.size()-1) != 7){
-				list.add(7);
-			}
+			// Number 7
+			list.add(7);
+			
 		}
 		
 		// Number 11

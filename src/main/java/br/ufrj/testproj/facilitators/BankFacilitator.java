@@ -72,10 +72,10 @@ public class BankFacilitator {
 		// C, N , T[] and D[]	
 		
 		// meet Node Requirements
-//		inputs = new int[][] {
-//			{1}, {1}, {0}, {1},
-//			{1}, {10}, {0,5,10,15,20,25,30,30,30,30}, {4,5,6,6,5,4,10,10,10,10},
-//		};
+		inputs = new int[][] {
+			{1}, {1}, {0}, {1},
+			{1}, {10}, {0,5,10,15,20,25,30,30,30,30}, {4,5,6,6,5,4,10,10,10,10},
+		};
 		
 		// meet Edge Requirements
 //		inputs = new int[][] {
@@ -94,13 +94,13 @@ public class BankFacilitator {
 //		};		
 		
 		// meet Prime Path Requirements
-		inputs = new int[][] {
-			{2}, {2}, {0, 0}, {1, 1},
-			{1}, {10}, {0,5,10,15,20,25,30,30,30,30}, {1,2,3,4,5,6,7,8,9,10},
-			{3}, {10}, {0,3,6,9,12,15,18,21,24,27}, {9,9,9,9,9,9,9,9,9,9},
-			{3}, {4}, {0,2,4,4}, {3,1,1,1},
-			{3}, {4}, {0,2,4,4}, {3,3,3,1}
-		};	
+//		inputs = new int[][] {
+//			{2}, {2}, {0, 0}, {1, 1},
+//			{1}, {10}, {0,5,10,15,20,25,30,30,30,30}, {1,2,3,4,5,6,7,8,9,10},
+//			{3}, {10}, {0,3,6,9,12,15,18,21,24,27}, {9,9,9,9,9,9,9,9,9,9},
+//			{3}, {4}, {0,2,4,4}, {3,1,1,1},
+//			{3}, {4}, {0,2,4,4}, {3,3,3,1}
+//		};	
 		
 //		inputs = new int[][] {
 //			{2}, {2}, {0, 0}, {1, 1},
@@ -139,7 +139,7 @@ public class BankFacilitator {
 			
 			// Node Coverage
 			nodesReached.addAll(pathTraveled);
-			System.out.println("Nodes reached: "+ nodesReached);
+			System.out.println("Nodes reached: "+ new TreeSet<Integer>(pathTraveled));
 			
 			// Edge Coverage
 			System.out.print("Edges Reached: ");
