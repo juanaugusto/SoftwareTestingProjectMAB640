@@ -5,9 +5,12 @@ import java.util.Collections;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-public class CalculateBankOBI {
+public class CalculateBankOBI extends CalculateGeneral {
+	
+	private int returnedValue;
 
-	public static int calculateWrongBank(int C, int N, int[] T, int[] D) {
+	public CalculateBankOBI calculateWrongBank(int C, int N, int[] T, int[] D) {
+		ArrayList<Integer> list = new ArrayList<Integer>();
 
 		int[][] tempos = new int[T.length][2];
 
@@ -16,18 +19,20 @@ public class CalculateBankOBI {
 			tempos[i][1] = D[i];
 		}
 		
-		System.out.print("1 ");
+		list.add(1);
 		// Number 1
 		if (N <= C) {
 
-			System.out.print("2 ");
-			System.out.println();
+			list.add(2);
 			// Number 2
-			return 0;
+			
+			this.pathPercurred = list;
+			this.returnedValue = 0;
+			return this;
 		}
 		
 		else {
-			System.out.print("3 ");
+			list.add(3);
 			// Number 3 - else
 		
 			int cont = 0;
@@ -35,35 +40,39 @@ public class CalculateBankOBI {
 			termina.add(tempos[0][0] + tempos[0][1]);
 			int caixas = C - 1;
 			
-			System.out.print("4 ");
+			list.add(4);
 			// Number 4
 			for (int i = 1; i < N; i++) {
 				
-				System.out.print("6 ");
+				list.add(6);
 				// Number 6
 				Collections.sort(termina);
 				
-				System.out.print("7 ");
+				list.add(7);
 				// Number 7
 				while (termina.get(0) <= tempos[i][0]) {
 					
-					System.out.print("8 ");
+					list.add(8);
 					// Number 8
 					termina.remove(0);
 					caixas = caixas + 1;
 					if (termina.size() == 0) {
 						
-						System.out.print("9 ");
+						list.add(9);
 						// Number 9
 						break;
 					}
+					
+					list.add(7);
+					// Number 7
+					
 				}
 
-				System.out.print("10 ");
+				list.add(10);
 				// Number 10
 				if (caixas > 1) {
 					
-					System.out.print("11 ");
+					list.add(11);
 					// Number 11
 					caixas = caixas - 1;
 					termina.add(tempos[i][0] + tempos[i][1]);
@@ -77,29 +86,43 @@ public class CalculateBankOBI {
 					}catch(NoSuchElementException e){
 						atendimento = -1;
 					}
+					
 					termina.remove(atendimento);
 					termina.add(atendimento + tempos[i][1]);
 					
-					System.out.print("12 ");
+					list.add(12);
 					// Number 12
 					if (atendimento - tempos[i][0] > 20) {
 						
-						System.out.print("13 ");
+						list.add(13);
 						// Number 13
 						cont = cont + 1;
 					}
 				}
 				
-				System.out.print("14 ");
+				list.add(14);
 				// Number 14
 				// i = i + 1 (implicito do for)
+				
+				list.add(4);
+				// Number 4
 			}
 			
-			System.out.print("5 ");
-			System.out.println();
+			list.add(5);
 			// Number 5
-			return cont;
+
+			this.pathPercurred = list;
+			this.returnedValue = cont;
+			return this;
 
 		}
+	}
+
+	public int getReturnedValue() {
+		return returnedValue;
+	}
+
+	public void setReturnedValue(int returnedValue) {
+		this.returnedValue = returnedValue;
 	}
 }

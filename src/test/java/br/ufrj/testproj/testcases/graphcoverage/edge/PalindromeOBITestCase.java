@@ -30,7 +30,7 @@ public class PalindromeOBITestCase {
 		this.expectedResponse = "SIM";
 		assertEquals(
 				this.expectedResponse, 
-				CalculatePalindromeOBI.calculateWrongPalindrome(word)
+				new CalculatePalindromeOBI().calculateWrongPalindrome(word).getReturnedValue()
 		);
 	
 	}	
@@ -42,7 +42,7 @@ public class PalindromeOBITestCase {
 		this.expectedResponse = "NAO";
 		assertEquals(
 				this.expectedResponse, 
-				CalculatePalindromeOBI.calculateWrongPalindrome(word)
+				new CalculatePalindromeOBI().calculateWrongPalindrome(word).getReturnedValue()
 		);
 	
 	}

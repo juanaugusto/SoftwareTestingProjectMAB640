@@ -21,7 +21,10 @@ public class BankOBITest {
 
 		this.expectNumberClientsWait = 0;
 
-		assertEquals(expectNumberClientsWait, CalculateBankOBI.calculateWrongBank(this.C, this.N, this.T, this.D));
+		assertEquals(
+			expectNumberClientsWait, 
+			new CalculateBankOBI().calculateWrongBank(this.C, this.N, this.T, this.D).getReturnedValue()
+		);
 	}
 
 	@Test
@@ -34,7 +37,10 @@ public class BankOBITest {
 
 		this.expectNumberClientsWait = 0;
 
-		assertEquals(expectNumberClientsWait, CalculateBankOBI.calculateWrongBank(this.C, this.N, this.T, this.D));
+		assertEquals(
+			expectNumberClientsWait, 
+			new CalculateBankOBI().calculateWrongBank(this.C, this.N, this.T, this.D).getReturnedValue()
+		);
 	}
 
 	@Test
@@ -47,7 +53,10 @@ public class BankOBITest {
 
 		this.expectNumberClientsWait = 6;
 		
-		assertEquals(expectNumberClientsWait, CalculateBankOBI.calculateWrongBank(this.C, this.N, this.T, this.D));
+		assertEquals(
+			expectNumberClientsWait, 
+			new CalculateBankOBI().calculateWrongBank(this.C, this.N, this.T, this.D).getReturnedValue()
+		);
 	}
 
 	@Test
@@ -60,7 +69,10 @@ public class BankOBITest {
 
 		this.expectNumberClientsWait = 0;
 		
-		assertEquals(expectNumberClientsWait, CalculateBankOBI.calculateWrongBank(this.C, this.N, this.T, this.D));
+		assertEquals(
+			expectNumberClientsWait, 
+			new CalculateBankOBI().calculateWrongBank(this.C, this.N, this.T, this.D).getReturnedValue()
+		);
 	}
 
 	@Test
@@ -73,7 +85,10 @@ public class BankOBITest {
 
 		this.expectNumberClientsWait = 0;
 		
-		assertEquals(expectNumberClientsWait, CalculateBankOBI.calculateWrongBank(this.C, this.N, this.T, this.D));
+		assertEquals(
+			expectNumberClientsWait, 
+			new CalculateBankOBI().calculateWrongBank(this.C, this.N, this.T, this.D).getReturnedValue()
+		);
 	}
 
 	@Test
@@ -85,7 +100,10 @@ public class BankOBITest {
 
 		this.expectNumberClientsWait = 0;
 
-		assertEquals(expectNumberClientsWait, CalculateBankOBI.calculateWrongBank(this.C, this.N, this.T, this.D));
+		assertEquals(
+			expectNumberClientsWait, 
+			new CalculateBankOBI().calculateWrongBank(this.C, this.N, this.T, this.D).getReturnedValue()
+		);
 	}
 
 	@Test
@@ -98,7 +116,10 @@ public class BankOBITest {
 
 		this.expectNumberClientsWait = 3;
 		
-		assertEquals(expectNumberClientsWait, CalculateBankOBI.calculateWrongBank(this.C, this.N, this.T, this.D));
+		assertEquals(
+			expectNumberClientsWait, 
+			new CalculateBankOBI().calculateWrongBank(this.C, this.N, this.T, this.D).getReturnedValue()
+		);
 	}
 
 	@Test
@@ -111,7 +132,10 @@ public class BankOBITest {
 
 		this.expectNumberClientsWait = 0;
 
-		assertEquals(expectNumberClientsWait, CalculateBankOBI.calculateWrongBank(this.C, this.N, this.T, this.D));
+		assertEquals(
+			expectNumberClientsWait, 
+			new CalculateBankOBI().calculateWrongBank(this.C, this.N, this.T, this.D).getReturnedValue()
+		);
 	}
 
 

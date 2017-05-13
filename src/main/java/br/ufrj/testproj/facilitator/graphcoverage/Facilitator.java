@@ -148,7 +148,7 @@ public class Facilitator {
 		System.out.println("How many Edge-Pairs reached: "+ edgePairsReached.size());
 		System.out.println();
 		
-		System.out.println("Prime Paths not already reached: ");
+		System.out.println("Prime Paths not reached: ");
 		for(int[] s: primePathsRequirements){
 
 			if(!primePathsReached.contains(s)){

@@ -11,31 +11,18 @@ public class BankOBITest {
 	int C;
 	int[] T;
 	int[] D;
-	int expectedResponse;
+	int expectNumberClientsWait;
 
 	@Test
-	public void testPathNumber2() {
-		//Infeasible Path
-	}
-
-	@Test
-	public void testPathNumber3() {
-		//Infeasible Path
-	}
-
-	@Test
-	public void testPathNumber5() {
+	public void testPathNumber1() {
 		this.N = 4;
 		this.C = 6;
-		this.T = new int[] {2, 5, 13, 23};
-		this.D = new int[] {6, 3, 5, 9};
+		this.T = new int[] { 2, 5, 13, 23 };
+		this.D = new int[] { 6, 3, 5, 9 };
 
-		this.expectedResponse = 0;
-		assertEquals(this.expectedResponse, CalculateBankOBI.calculateWrongBank(C, N, T, D));
+		this.expectNumberClientsWait = 0;
+		assertEquals(expectNumberClientsWait,
+				new CalculateBankOBI().calculateWrongBank(this.C, this.N, this.T, this.D).getReturnedValue());
 	}
 
-	@Test
-	public void testPathNumber6() {
-		//Infeasible Path
-	}
 }

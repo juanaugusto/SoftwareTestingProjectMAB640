@@ -10,9 +10,9 @@ public class BankOBITest {
 	int C, N;
 	int[] T, D;
 	int expectNumberClientsWait;
-	
+
 	@Test
-	public void testPathNumber1(){
+	public void testPathNumber1() {
 		this.C = 1;
 		this.N = 1;
 		this.T = new int[] { 0 };
@@ -20,22 +20,21 @@ public class BankOBITest {
 
 		this.expectNumberClientsWait = 0;
 
-		assertEquals(expectNumberClientsWait, CalculateBankOBI.calculateWrongBank(this.C, this.N, this.T, this.D));
-		
+		assertEquals(expectNumberClientsWait,
+				new CalculateBankOBI().calculateWrongBank(this.C, this.N, this.T, this.D).getReturnedValue());
 	}
-	
+
 	@Test
-	public void testPathNumber2(){
+	public void testPathNumber2() {
 		this.C = 1;
 		this.N = 10;
-		this.T = new int[] { 0,5,10,15,20,25,30,30,30,30 };
-		this.D = new int[] { 4,5,6,6,5,4,10,10,10,10 };
+		this.T = new int[] { 0, 5, 10, 15, 20, 25, 30, 30, 30, 30 };
+		this.D = new int[] { 4, 5, 6, 6, 5, 4, 10, 10, 10, 10 };
 
 		this.expectNumberClientsWait = 2;
 
-		assertEquals(expectNumberClientsWait, CalculateBankOBI.calculateWrongBank(this.C, this.N, this.T, this.D));
-		
+		assertEquals(expectNumberClientsWait,
+				new CalculateBankOBI().calculateWrongBank(this.C, this.N, this.T, this.D).getReturnedValue());
 	}
 
 }
-
