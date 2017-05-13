@@ -101,8 +101,7 @@ public class BankFacilitator extends Facilitator {
 			ArrayList<Integer> pathTraveled = bank.getPathPercurred();
 			int output = bank.getReturnedValue();
 			
-			System.out.println("Output: "+output);
-			calculateReachedForCriterias(pathTraveled);
+			calculateReachedForCriterias(pathTraveled, output);
 
 		}
 	}

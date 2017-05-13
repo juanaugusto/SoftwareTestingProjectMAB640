@@ -39,7 +39,9 @@ public class Facilitator {
 
 	}
 		
-	public void calculateReachedForCriterias(ArrayList<Integer> pathTraveled){
+	public void calculateReachedForCriterias(ArrayList<Integer> pathTraveled, Object returnedValue){
+		
+		System.out.println("Output: "+returnedValue);
 		System.out.println("Path traveled: "+pathTraveled);
 		
 		// Node Coverage

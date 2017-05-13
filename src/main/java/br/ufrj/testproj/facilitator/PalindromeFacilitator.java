@@ -93,8 +93,7 @@ public class PalindromeFacilitator extends Facilitator {
 			ArrayList<Integer> pathTraveled = palindrome.getPathPercurred();
 			String output = palindrome.getReturnedValue();
 			
-			System.out.println("Output: "+output);
-			calculateReachedForCriterias(pathTraveled);
+			calculateReachedForCriterias(pathTraveled, output);
 		}
 	}
 
