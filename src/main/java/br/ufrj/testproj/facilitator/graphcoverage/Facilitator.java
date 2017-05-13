@@ -40,41 +40,50 @@ public class Facilitator {
 	}
 		
 	public void calculateReachedForCriterias(ArrayList<Integer> pathTraveled){
+		System.out.println("Path traveled: "+pathTraveled);
+		
 		// Node Coverage
+		System.out.print("Node coverage: ");
 		for(int nodeRequirement: nodeRequirements){
 			
 			List<Integer> listNodeRequirements = Arrays.asList(ArrayUtils.toObject(new int[] {nodeRequirement}));
 			if(Collections.indexOfSubList(pathTraveled, 
 					listNodeRequirements) >= 0){
-				
+				System.out.print(nodeRequirement + " ");
+
 				if(!nodesReached.contains(nodeRequirement)){
 					nodesReached.add(nodeRequirement);
 				}
 				
 			}
 		}
-			
-		
+		System.out.println();
+					
 		// Edge Coverage
+		System.out.print("Edge coverage: ");
 		for(int[] edgeRequirement: edgeRequirements){
 		
 			List<Integer> listEdgeRequirements = Arrays.asList(ArrayUtils.toObject(edgeRequirement));
 			if(Collections.indexOfSubList(pathTraveled, 
 					listEdgeRequirements) >= 0){
-				
+				System.out.print(Arrays.toString(edgeRequirement) + " ");
+
 				if(!edgesReached.contains(edgeRequirement)){
 					edgesReached.add(edgeRequirement);
 				}
 			
 			}
 		}
+		System.out.println();
 		
 		// Edge-Pair Coverage
+		System.out.print("Edge Pair coverage: ");
 		for(int[] edgePairRequirement: edgePairRequirements){
 			
 			List<Integer> listEdgePairRequirements = Arrays.asList(ArrayUtils.toObject(edgePairRequirement));
 			if(Collections.indexOfSubList(pathTraveled, 
 					listEdgePairRequirements) >= 0){
+				System.out.print(Arrays.toString(edgePairRequirement) + " ");
 				
 				if(!edgePairsReached.contains(edgePairRequirement)){
 					edgePairsReached.add(edgePairRequirement);
@@ -83,13 +92,16 @@ public class Facilitator {
 			
 			}
 		}
+		System.out.println();
 
 		// Prime Path Coverage
+		System.out.print("Prime Path coverage: ");
 		for(int[] primePathRequirement: primePathsRequirements){
 
 			List<Integer> listPrimePathRequirements = Arrays.asList(ArrayUtils.toObject(primePathRequirement));
 			if(Collections.indexOfSubList(pathTraveled, 
 					listPrimePathRequirements) >= 0){
+				System.out.print(Arrays.toString(primePathRequirement) + " ");
 				
 				if(!primePathsReached.contains(primePathRequirement)){
 					primePathsReached.add(primePathRequirement);
@@ -97,6 +109,10 @@ public class Facilitator {
 			
 			}
 		}
+		System.out.println();
+
+		
+		System.out.println();
 	}
 	
 	public void showStatistics(){

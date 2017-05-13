@@ -64,12 +64,12 @@ public class PalindromeFacilitator extends Facilitator {
 		
 //		// Prime Path Coverage
 //		inputs = new char[][] {
-//			{'b', 'y', 'b', 'y', 'b', 'y', 'a', 'b'},
+//			{'a', 'b', 'b', 'b', 'a', 'a'},
+//			{'b', 'y', 'b', 'y', 'b', 'y', 'a', 'c', ' '},
 //			{'a', 'a', ' ', 'a', 'a'},
-//			{'a', 'a', 'a', 'a', 'a'},
-//			{'a'},
-//			{'a','a'},
+//			{' ', 'a', ' ','a', ' '},
 //			{'b', 'x'},
+//			{'a'},
 //			{},
 //			{' '},
 //		};
