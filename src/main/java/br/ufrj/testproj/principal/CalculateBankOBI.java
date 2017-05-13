@@ -3,6 +3,7 @@ package br.ufrj.testproj.principal;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class CalculateBankOBI {
 
@@ -70,7 +71,12 @@ public class CalculateBankOBI {
 				} 
 
 				else {
-					Integer atendimento = Collections.min(termina);
+					Integer atendimento;
+					try{
+						atendimento = Collections.min(termina);
+					}catch(NoSuchElementException e){
+						atendimento = -1;
+					}
 					termina.remove(atendimento);
 					termina.add(atendimento + tempos[i][1]);
 					

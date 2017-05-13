@@ -20,53 +20,21 @@ public class BankOBITest {
 
 		this.expectNumberClientsWait = 0;
 
-		//assertEquals(expectNumberClientsWait, CalculateBankOBI.calculateWrongBank(this.C, this.N, this.T, this.D));
+		assertEquals(expectNumberClientsWait, CalculateBankOBI.calculateWrongBank(this.C, this.N, this.T, this.D));
 		
 	}
 	
 	@Test
 	public void testPathNumber2(){
-		//Infeasible path
-				
-	}
-	
-	@Test
-	public void testPathNumber3(){
-		//Infeasible path
-				
-	}
-
-	@Test
-	public void testPathNumber4(){
-		//Infeasible path
-				
-	}
-	
-	@Test
-	public void testPathNumber5(){
 		this.C = 1;
-		this.N = 2;
-		this.T = new int[] { 0, 0 };
-		this.D = new int[] { 3, 3 };
+		this.N = 10;
+		this.T = new int[] { 0,5,10,15,20,25,30,30,30,30 };
+		this.D = new int[] { 4,5,6,6,5,4,10,10,10,10 };
 
-		this.expectNumberClientsWait = 1;
+		this.expectNumberClientsWait = 2;
 
 		assertEquals(expectNumberClientsWait, CalculateBankOBI.calculateWrongBank(this.C, this.N, this.T, this.D));
-
 		
-	}
-
-	@Test
-	public void testNoBAK() {
-
-//		this.C = 1;
-//		this.N = 1;
-//		this.T = new int[] { 0 };
-//		this.D = new int[] { 1 };
-//
-//		this.expectNumberClientsWait = 0;
-//
-//		assertEquals(expectNumberClientsWait, CalculateBankOBI.calculateWrongBank(this.C, this.N, this.T, this.D));
 	}
 
 }

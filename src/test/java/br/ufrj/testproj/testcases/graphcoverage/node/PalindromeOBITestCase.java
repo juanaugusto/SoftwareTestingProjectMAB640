@@ -20,7 +20,7 @@ public class PalindromeOBITestCase {
 	
 	@After
 	public void tearDown(){
-		System.out.println();
+	
 	}
 
 	@Test

@@ -12,7 +12,6 @@ public class PalindromeOBITestCase {
 
 	char[] word;
 	String expectedResponse;
-	int[] percurredPath;
 
 	@Before
 	public void setUp(){
@@ -21,7 +20,7 @@ public class PalindromeOBITestCase {
 	
 	@After
 	public void tearDown(){
-		System.out.println();
+	
 	}
 	
 	@Test
