@@ -1,13 +1,12 @@
-package br.ufrj.testproj.facilitator;
+package br.ufrj.testproj.facilitator.graphcoverage;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-import br.ufrj.testproj.facilitator.graphcoverage.Facilitator;
-import br.ufrj.testproj.principal.CalculateBankOBI;
-import br.ufrj.testproj.principal.CalculatePalindromeOBI;
+import br.ufrj.testproj.principal.calculator.CalculateBankOBI;
+import br.ufrj.testproj.principal.calculator.CalculatePalindromeOBI;
 
 public class BankFacilitator extends Facilitator {
 	
@@ -86,7 +85,14 @@ public class BankFacilitator extends Facilitator {
 			{1}, {10}, {0,5,10,15,20,25,30,30,30,30}, {1,2,3,4,5,6,7,8,9,10},
 			{3}, {10}, {0,3,6,9,12,15,18,21,24,27}, {9,9,9,9,9,9,9,9,9,9},
 			{3}, {4}, {0,2,4,4}, {3,1,1,1},
-			{3}, {4}, {0,2,4,4}, {3,3,3,1}
+			{3}, {4}, {0,2,4,4}, {3,3,3,1},
+			{3}, {7}, {0,1,2,3,4,5,6}, {1,1,5,5,5,10,10},
+			{3}, {15}, {0,0,0,1,1,1,2,2,2,3,3,3,100,100,100}, {10,9,8,7,6,6,7,8,9,10,10,9,8,7,6},
+			{7}, {15}, {10,10,10,10,10,10,10,100,100,100,100,100,100,100,110}, {10,10,10,10,10,6,7,8,9,10,10,9,8,7,6},
+			{1}, {12}, {0,0,0,0,10,10,10,10,20,20,20,20}, {10,10,10,10,8,8,8,8,10,10,10,10},
+			{1}, {6}, {0,1,3,4,5,50}, {9,1,9,1,1,5},
+			{1}, {12}, {0,1,3,4,5,50,51,53,54,55,56,120}, {9,1,9,1,1,5,10,10,5,7,1,4}
+
 		};
 		
 		for(int i = 0; i < inputs.length; i=i+4){

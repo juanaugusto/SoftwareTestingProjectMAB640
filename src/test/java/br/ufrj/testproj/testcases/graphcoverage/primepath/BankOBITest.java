@@ -3,7 +3,7 @@ package br.ufrj.testproj.testcases.graphcoverage.primepath;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
-import br.ufrj.testproj.principal.CalculateBankOBI;
+import br.ufrj.testproj.principal.calculator.CalculateBankOBI;
 
 public class BankOBITest {
 

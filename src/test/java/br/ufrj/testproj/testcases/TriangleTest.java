@@ -8,7 +8,7 @@ import br.ufrj.testproj.exceptions.NegativeSideException;
 import br.ufrj.testproj.exceptions.TooBigSideException;
 import br.ufrj.testproj.exceptions.WrongNumberOfArgumentsException;
 import br.ufrj.testproj.exceptions.ZeroSideException;
-import br.ufrj.testproj.principal.ClassifyTriangles;
+import br.ufrj.testproj.principal.calculator.ClassifyTriangles;
 
 public class TriangleTest {
 

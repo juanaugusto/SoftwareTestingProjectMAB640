@@ -1,4 +1,4 @@
-package br.ufrj.testproj.principal;
+package br.ufrj.testproj.principal.calculator;
 
 public class CalculatePlaneFlight {
 

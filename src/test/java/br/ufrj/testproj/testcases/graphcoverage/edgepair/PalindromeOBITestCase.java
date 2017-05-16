@@ -6,7 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import br.ufrj.testproj.principal.CalculatePalindromeOBI;
+import br.ufrj.testproj.principal.calculator.CalculatePalindromeOBI;
 
 public class PalindromeOBITestCase {
 

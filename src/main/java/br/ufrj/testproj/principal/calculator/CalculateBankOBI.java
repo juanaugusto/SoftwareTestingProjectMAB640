@@ -1,9 +1,13 @@
-package br.ufrj.testproj.principal;
+package br.ufrj.testproj.principal.calculator;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.NoSuchElementException;
+
+import com.google.common.primitives.Ints;
 
 public class CalculateBankOBI extends CalculateGeneral {
 	
@@ -83,12 +87,18 @@ public class CalculateBankOBI extends CalculateGeneral {
 					Integer atendimento;
 					try{
 						atendimento = Collections.min(termina);
+						termina.remove(atendimento);
+						termina.add(atendimento + tempos[i][1]);
 					}catch(NoSuchElementException e){
 						atendimento = -1;
+						
+						termina.remove(atendimento);
+						
+						atendimento = 0;
+						termina.add(atendimento + tempos[i][1]);
 					}
 					
-					termina.remove(atendimento);
-					termina.add(atendimento + tempos[i][1]);
+					
 					
 					list.add(12);
 					// Number 12
@@ -117,7 +127,7 @@ public class CalculateBankOBI extends CalculateGeneral {
 
 		}
 	}
-
+	
 	public int getReturnedValue() {
 		return returnedValue;
 	}

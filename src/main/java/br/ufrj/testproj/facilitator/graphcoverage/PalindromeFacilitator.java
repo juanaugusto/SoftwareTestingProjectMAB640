@@ -1,11 +1,10 @@
-package br.ufrj.testproj.facilitator;
+package br.ufrj.testproj.facilitator.graphcoverage;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import br.ufrj.testproj.facilitator.graphcoverage.Facilitator;
-import br.ufrj.testproj.principal.CalculatePalindromeOBI;
+import br.ufrj.testproj.principal.calculator.CalculatePalindromeOBI;
 
 public class PalindromeFacilitator extends Facilitator {
 

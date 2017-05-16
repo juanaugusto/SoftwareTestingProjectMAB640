@@ -1,9 +1,9 @@
 package br.ufrj.testproj.testcases;
 
-import br.ufrj.testproj.principal.CalculatePlaneFlight;
-
 import static org.junit.Assert.assertArrayEquals;
 import org.junit.Test;
+
+import br.ufrj.testproj.principal.calculator.CalculatePlaneFlight;
 
 public class FlightOBITest {
 

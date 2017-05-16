@@ -1,4 +1,4 @@
-package br.ufrj.testproj.principal;
+package br.ufrj.testproj.principal.calculator;
 
 import br.ufrj.testproj.exceptions.NegativeSideException;
 import br.ufrj.testproj.exceptions.TooBigSideException;
