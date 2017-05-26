@@ -1,4 +1,7 @@
 # Trabalhos de Projeto de Testes de Software
+
+**Versão Java do Projeto:** 1.8
+
 ## Trabalho 1 (29/03/2017) - Criação e implementação dos testes para a função que retorna o tipo de triângulo
 
 Para este trabalho, foram criado os seguintes arquivos:
@@ -12,4 +15,29 @@ Para este trabalho, foram criado os seguintes arquivos:
 * Juan Augusto
 * Amanda Braga
 
-**Versão Java do Projeto:** 1.8
+## Trabalho 2 - Projeto de Testes baseado em Particionamento do Espaço de Entrada
+
+* [br.ufrj.testproj.principal.calculator.CalculatePlaneFlightOBI]
+* [br.ufrj.testproj.principal.calculator.CalculateBankOBI]
+* [br.ufrj.testproj.testcases.BankOBITestCase]
+* [br.ufrj.testproj.testcases.FlightOBITestCase]
+
+## Trabalho 3 - Projeto de Testes baseado em Grafos
+
+* [br.ufrj.testproj.facilitator.graphcoverage.BankFacilitator]
+* [br.ufrj.testproj.facilitator.graphcoverage.Facilitator]
+* [br.ufrj.testproj.facilitator.graphcoverage.PalindromeFacilitator]
+* [br.ufrj.testproj.principal.calculator.CalculateBankOBI]
+* [br.ufrj.testproj.principal.calculator.CalculatePalindromeOBI]
+* [br.ufrj.testproj.principal.calculator.CalculateGeneral]
+* [br.ufrj.testproj.testcases.graphcoverage.edge.BankOBITestCase]
+* [br.ufrj.testproj.testcases.graphcoverage.edge.PalindromeOBITestCase]
+* [br.ufrj.testproj.testcases.graphcoverage.edgepair.BankOBITestCase]
+* [br.ufrj.testproj.testcases.graphcoverage.edgepair.PalindromeOBITestCase]
+* [br.ufrj.testproj.testcases.graphcoverage.node.BankOBITestCase]
+* [br.ufrj.testproj.testcases.graphcoverage.node.PalindromeOBITestCase]
+* [br.ufrj.testproj.testcases.graphcoverage.primepath.BankOBITestCase]
+* [br.ufrj.testproj.testcases.graphcoverage.primepath.PalindromeOBITestCase]
+
+
+

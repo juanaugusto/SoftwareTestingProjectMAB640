@@ -3,9 +3,9 @@ package br.ufrj.testproj.testcases;
 import static org.junit.Assert.assertArrayEquals;
 import org.junit.Test;
 
-import br.ufrj.testproj.principal.calculator.CalculatePlaneFlight;
+import br.ufrj.testproj.principal.calculator.CalculatePlaneFlightOBI;
 
-public class FlightOBITest {
+public class FlightOBITestCase {
 
 	private String pA, pB, cA, cB;
 
@@ -19,7 +19,7 @@ public class FlightOBITest {
 		int[] durationAndFuse = { 1, -11 };
 
 		assertArrayEquals(durationAndFuse,
-				CalculatePlaneFlight.calculateWrongDurationAndFuseDifference(pA, cB, pB, cA));
+				CalculatePlaneFlightOBI.calculateWrongDurationAndFuseDifference(pA, cB, pB, cA));
 	}
 
 	// Test for duration = 0h01 and DeltaFuse = 12
@@ -32,7 +32,7 @@ public class FlightOBITest {
 		int[] durationAndFuse = { 1, 12 };
 
 		assertArrayEquals(durationAndFuse,
-				CalculatePlaneFlight.calculateWrongDurationAndFuseDifference(pA, cB, pB, cA));
+				CalculatePlaneFlightOBI.calculateWrongDurationAndFuseDifference(pA, cB, pB, cA));
 	}
 
 	// Test for duration = 0h01 and DeltaFuse = 7
@@ -45,7 +45,7 @@ public class FlightOBITest {
 		int[] durationAndFuse = { 1, 7 };
 
 		assertArrayEquals(durationAndFuse,
-				CalculatePlaneFlight.calculateWrongDurationAndFuseDifference(pA, cB, pB, cA));
+				CalculatePlaneFlightOBI.calculateWrongDurationAndFuseDifference(pA, cB, pB, cA));
 	}
 
 	// Test for duration = 11h59 and DeltaFuse = -11
@@ -58,7 +58,7 @@ public class FlightOBITest {
 		int[] durationAndFuse = { 719, -11 };
 
 		assertArrayEquals(durationAndFuse,
-				CalculatePlaneFlight.calculateWrongDurationAndFuseDifference(pA, cB, pB, cA));
+				CalculatePlaneFlightOBI.calculateWrongDurationAndFuseDifference(pA, cB, pB, cA));
 	}
 
 	// Test for duration = 11h59 and DeltaFuse = 12
@@ -71,7 +71,7 @@ public class FlightOBITest {
 		int[] durationAndFuse = { 719, 12 };
 
 		assertArrayEquals(durationAndFuse,
-				CalculatePlaneFlight.calculateWrongDurationAndFuseDifference(pA, cB, pB, cA));
+				CalculatePlaneFlightOBI.calculateWrongDurationAndFuseDifference(pA, cB, pB, cA));
 	}
 
 	// Test for duration = 11h59 and DeltaFuse = -5
@@ -84,7 +84,7 @@ public class FlightOBITest {
 		int[] durationAndFuse = { 719, -5 };
 
 		assertArrayEquals(durationAndFuse,
-				CalculatePlaneFlight.calculateWrongDurationAndFuseDifference(pA, cB, pB, cA));
+				CalculatePlaneFlightOBI.calculateWrongDurationAndFuseDifference(pA, cB, pB, cA));
 	}
 
 	// Test for duration = 10h32 and DeltaFuse = -11
@@ -97,7 +97,7 @@ public class FlightOBITest {
 		int[] durationAndFuse = { 632, -11 };
 
 		assertArrayEquals(durationAndFuse,
-				CalculatePlaneFlight.calculateWrongDurationAndFuseDifference(pA, cB, pB, cA));
+				CalculatePlaneFlightOBI.calculateWrongDurationAndFuseDifference(pA, cB, pB, cA));
 	}
 
 	// Test for duration = 5h21 and DeltaFuse = 12
@@ -110,7 +110,7 @@ public class FlightOBITest {
 		int[] durationAndFuse = { 321, 12 };
 
 		assertArrayEquals(durationAndFuse,
-				CalculatePlaneFlight.calculateWrongDurationAndFuseDifference(pA, cB, pB, cA));
+				CalculatePlaneFlightOBI.calculateWrongDurationAndFuseDifference(pA, cB, pB, cA));
 	}
 
 	// Test for duration = 7h54 and DeltaFuse = 0
@@ -123,6 +123,6 @@ public class FlightOBITest {
 		int[] durationAndFuse = { 474, 0 };
 
 		assertArrayEquals(durationAndFuse,
-				CalculatePlaneFlight.calculateWrongDurationAndFuseDifference(pA, cB, pB, cA));
+				CalculatePlaneFlightOBI.calculateWrongDurationAndFuseDifference(pA, cB, pB, cA));
 	}
 }

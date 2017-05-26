@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import br.ufrj.testproj.principal.calculator.CalculateBankOBI;
 
-public class BankOBITest {
+public class BankOBITestCase {
 
 	int N;
 	int C;

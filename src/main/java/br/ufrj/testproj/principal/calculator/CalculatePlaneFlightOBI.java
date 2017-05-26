@@ -1,6 +1,6 @@
 package br.ufrj.testproj.principal.calculator;
 
-public class CalculatePlaneFlight {
+public class CalculatePlaneFlightOBI {
 
 	public static int readTime(String s) {
 		String sep[] = s.split(":");
