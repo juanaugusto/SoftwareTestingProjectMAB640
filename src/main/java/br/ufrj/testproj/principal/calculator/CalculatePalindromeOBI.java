@@ -1,12 +1,86 @@
 package br.ufrj.testproj.principal.calculator;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class CalculatePalindromeOBI extends CalculateGeneral {
 	
 	String returnedValue;
 	
 	private static void noop() {
+
+	}
+	
+	public static String calculateWrongPalindromeForLogicCoverage(char[] letras) {
+		
+		System.out.println(Arrays.toString(letras));
+		int contador_entrada, contador_texto, i, j;
+		char texto[] = new char[11];
+		int palindromo;
+		contador_entrada = 0;
+		contador_texto = 0;
+		
+		System.out.println("P1 - A: "+(letras[contador_entrada] != '\u001a') + " B: "+(letras[contador_entrada] != '\n') + " C: "+ (contador_entrada <= 10));
+		while(letras[contador_entrada] != '\u001a' && 
+				letras[contador_entrada] != '\n' && 
+				contador_entrada <= 10){
+			
+			
+			System.out.println("P2 - D: "+(letras[contador_entrada] != ' ')); 
+			if (letras[contador_entrada] != ' '){
+				texto[contador_texto] = letras[contador_entrada];
+				contador_texto++;
+			}
+			contador_entrada++;
+			
+			System.out.println("P1 - A: "+(letras[contador_entrada] != '\u001a') + " B: "+(letras[contador_entrada] != '\n') + " C: "+ (contador_entrada <= 10));
+
+		}
+
+		i = 0;
+		j = contador_texto;
+		// j = contador_texto - 1; -- Replaced by above
+		palindromo = 1;
+		
+		System.out.println("P3 - E: "+(j > i)); 
+		while (j > i) {
+			
+			System.out.println("P4 - F: "+(texto[i] != texto[j])); 
+
+			if (texto[i] != texto[j]) {
+
+				palindromo = 0;
+			}
+			
+			i = i + 1;
+			j = j - 1;
+			
+			System.out.println("P3 - E: "+(j > i)); 
+	
+		}
+		
+		System.out.println("P5 - G: "+(palindromo == 1));
+
+		if (palindromo == 1) {
+			return "SIM\n";
+
+		} else {
+			return "NAO\n";
+		}
+
+		
+	}
+	
+	public static void main(String[] args){
+		
+		
+		// Cobertura de Predicados
+		System.out.println(calculateWrongPalindromeForLogicCoverage(new char[]{'\n'}));
+		System.out.println(calculateWrongPalindromeForLogicCoverage(new char[]{'a', 'a', ' ', 'a',  'a', '\u001a'}));
+		
+		// Cobertura de Cláusulas
+		System.out.println(calculateWrongPalindromeForLogicCoverage(new char[]{'a', 'i', 'b','o', 'f', 'o', 'b', 'i', 'a', '\n'}));
+
 
 	}
 
@@ -26,6 +100,7 @@ public class CalculatePalindromeOBI extends CalculateGeneral {
 		
 		// Number 2
 		list.add(2);
+		
 		for (char letra : letras) {
 			
 			// Number 3
@@ -51,7 +126,8 @@ public class CalculatePalindromeOBI extends CalculateGeneral {
 		// Number 6
 		list.add(6);
 		i = 0;
-		j = contador_texto - 1;
+		j = contador_texto;
+		// j = contador_texto - 1; -- Replaced by above
 		palindromo = 1;
 		
 		// Number 7
