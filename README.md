@@ -39,5 +39,12 @@ Para este trabalho, foram criado os seguintes arquivos:
 * [br.ufrj.testproj.testcases.graphcoverage.primepath.BankOBITestCase]
 * [br.ufrj.testproj.testcases.graphcoverage.primepath.PalindromeOBITestCase]
 
+## Trabalho 4 - Projeto de Testes baseado em Cobertura Lógica
+* [br.ufrj.testproj.principal.calculator.CalculatePalindromeOBI]
+* [br.ufrj.testproj.testcases.logiccoverage.predicate]
+* [br.ufrj.testproj.testcases.logiccoverage.clause]
+* [br.ufrj.testproj.testcases.logiccoverage.combinatorial]
+* [br.ufrj.testproj.testcases.logiccoverage.gacc]
+
 
 
