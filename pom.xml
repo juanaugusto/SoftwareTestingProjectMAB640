@@ -42,11 +42,11 @@
 				<version>1.2.0</version>
 				<configuration>
 					<targetClasses>
-						<param>br.ufrj.testproj.window.CalculateWindow1Problem</param>
+						<param>br.ufrj.testproj.window.CalculateWindow3Problem</param>
 
 					</targetClasses>
 					<targetTests>
-						<param>br.ufrj.testproj.testcases.mutation.window1.WindowTestCaseBig</param>
+						<param>br.ufrj.testproj.testcases.mutation.window3.WindowTestCaseBig</param>
 
 					</targetTests>
 				</configuration>
