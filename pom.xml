@@ -46,7 +46,7 @@
 
 					</targetClasses>
 					<targetTests>
-						<param>br.ufrj.testproj.testcases.mutation.window3.WindowTestCaseBig</param>
+						<param>br.ufrj.testproj.testcases.mutation.window3.WindowTestCaseLittle</param>
 
 					</targetTests>
 				</configuration>
