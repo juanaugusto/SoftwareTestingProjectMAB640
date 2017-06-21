@@ -91,6 +91,14 @@ public class WindowTestCaseCompleteMutantsCoverage {
 		assertEquals(16700, output);
 	}
 	
+	@Test
+	public void testNumberX1() {
+		int output = CalculateWindow2Problem.calculateWindowC2( 139, 339, 341);
+		assertEquals(0, output);
+	}
+	
+	
+	
 //	@Test
 //	public void testNumberX(){
 //		int output = CalculateWindow2Problem.calculateWindowC2(400, 200, 0);

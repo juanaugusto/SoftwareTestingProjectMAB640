@@ -2,7 +2,7 @@ package br.ufrj.testproj.testcases.mutation.windowspecial;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 import br.ufrj.testproj.window.CalculateWindow2Problem;
-public class AllPossibleTests {
+public class AllPossibleTestsBAK {
 
 @Test
 public void testNumber0() {

@@ -46,7 +46,7 @@
 
 					</targetClasses>
 					<targetTests>
-						<param>br.ufrj.testproj.testcases.mutation.windowspecial.AllPossibleTests</param>
+						<param>br.ufrj.testproj.testcases.mutation.window2.WindowTestCaseCompleteMutantsCoverage</param>
 
 					</targetTests>
 				</configuration>
