@@ -46,5 +46,11 @@ Para este trabalho, foram criado os seguintes arquivos:
 * [br.ufrj.testproj.testcases.logiccoverage.combinatorial]
 * [br.ufrj.testproj.testcases.logiccoverage.gacc]
 
+## Trabalho 5 - Projeto de Testes baseado em Mutação
+* [br.ufrj.testproj.window]
+* [br.ufrj.testproj.testcases.mutation.window1]
+* [br.ufrj.testproj.testcases.mutation.window2]
+* [br.ufrj.testproj.testcases.mutation.window3]
+* [pom.xml] // File with PITest References
 
 
