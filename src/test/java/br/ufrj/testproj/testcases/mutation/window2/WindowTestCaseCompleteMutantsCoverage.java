@@ -13,10 +13,10 @@ public class WindowTestCaseCompleteMutantsCoverage {
 	int p3;
 	int expectOutput;
 	
-	// Testes do conjunto grande
+	// Tests from the large set
 
 	@Test
-	public void testNumber4() {
+	public void testNumber1() {
 		this.p1 = 400;
 		this.p2 = 0;
 		this.p3 = 400;
@@ -27,7 +27,7 @@ public class WindowTestCaseCompleteMutantsCoverage {
 	}
 
 	@Test
-	public void testNumber5() {
+	public void testNumber2() {
 		this.p1 = 0;
 		this.p2 = 200;
 		this.p3 = 400;
@@ -38,7 +38,7 @@ public class WindowTestCaseCompleteMutantsCoverage {
 	}
 
 	@Test
-	public void testNumber9() {
+	public void testNumber3() {
 		this.p1 = 100;
 		this.p2 = 0;
 		this.p3 = 400;
@@ -49,7 +49,7 @@ public class WindowTestCaseCompleteMutantsCoverage {
 	}
 	
 	@Test
-	public void testNumber14() {
+	public void testNumber4() {
 		this.p1 = 200;
 		this.p2 = 0;
 		this.p3 = 400;
@@ -59,52 +59,36 @@ public class WindowTestCaseCompleteMutantsCoverage {
 		assertEquals(this.expectOutput, output);
 	}
 	
-	// Testes a mais
+	// New Tests
 	
 	@Test
-	public void testNumber2173() {
+	public void testNumber5() {
 		int output = CalculateWindow2Problem.calculateWindowC2(170, 370, 384);
 		assertEquals(0, output);
 	}
 	
 	@Test
-	public void testNumber1720() {
+	public void testNumber6() {
 		int output = CalculateWindow2Problem.calculateWindowC2(37, 99, 299);
 		assertEquals(0, output);
 	}
 	
 	@Test
-	public void testNumber1200() {
+	public void testNumber7() {
 		int output = CalculateWindow2Problem.calculateWindowC2(26, 177, 318);
 		assertEquals(10800, output);
 	}
 	
 	@Test
-	public void testNumber1068() {
+	public void testNumber8() {
 		int output = CalculateWindow2Problem.calculateWindowC2(29, 239, 252);
 		assertEquals(18700, output);
 	}
 	
 	@Test
-	public void testNumber1266() {
+	public void testNumber9() {
 		int output = CalculateWindow2Problem.calculateWindowC2(105, 138, 393);
 		assertEquals(16700, output);
 	}
 	
-	@Test
-	public void testNumberX1() {
-		int output = CalculateWindow2Problem.calculateWindowC2( 139, 339, 341);
-		assertEquals(0, output);
-	}
-	
-	
-	
-//	@Test
-//	public void testNumberX(){
-//		int output = CalculateWindow2Problem.calculateWindowC2(400, 200, 0);
-//		
-//		assertEquals(80000, output);
-//
-//	}
-
 }
